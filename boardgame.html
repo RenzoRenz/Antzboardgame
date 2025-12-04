@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Board Games - AntzBoardgame</title>
+    <meta name="description" content="Explore our extensive collection of board games at AntzBoardgame cafe in Miri, Sarawak.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2">
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/language.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/Logo.jpg" alt="AntzBoardgame Logo">
+                <span>AntzBoardgame</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link" data-en="Home" data-zh="首页">Home</a></li>
+                <li><a href="jubensha.html" class="nav-link" data-en="Jubensha" data-zh="剧本杀">Jubensha</a></li>
+                <li><a href="boardgame.html" class="nav-link active" data-en="Boardgame" data-zh="桌游">Boardgame</a></li>
+                <li><a href="about.html" class="nav-link" data-en="About Us" data-zh="关于我们">About Us</a></li>
+                <li><a href="contact.html" class="nav-link" data-en="Contact Us" data-zh="联系我们">Contact Us</a></li>
+                <li><button id="lang-toggle" class="lang-btn">中文</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero boardgame-hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('assets/images/strategy-games.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/party-games.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/family-games.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/adventure-games.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content" data-aos="fade-in">
+            <h1 data-en="Board Game Collection" data-zh="桌游收藏" style="color: #D4AF37;">Board Game Collection</h1>
+            <p class="tagline" data-en="Discover Amazing Games for Every Occasion" data-zh="为每个场合发现精彩游戏">Discover Amazing Games for Every Occasion</p>
+        </div>
+    </section>
+
+    <!-- Game Categories Section -->
+    <section class="games">
+        <div class="container" data-aos="zoom-in">
+            <h2 data-en="Game Categories" data-zh="游戏分类">Game Categories</h2>
+            <div class="game-gallery">
+                <div class="game-category">
+                    <img src="assets/images/strategy-games.jpg" alt="Strategy Games">
+                    <h3 data-en="Strategy Games" data-zh="策略游戏">Strategy Games</h3>
+                    <p data-en="Catan, Ticket to Ride, Azul, Wingspan" data-zh="卡坦岛、车票之旅、花砖物语、展翅翱翔">Catan, Ticket to Ride, Azul, Wingspan</p>
+                </div>
+                <div class="game-category">
+                    <img src="assets/images/party-games.jpg" alt="Party Games">
+                    <h3 data-en="Party Games" data-zh="聚会游戏">Party Games</h3>
+                    <p data-en="Codenames, Dixit, Wavelength, Telestrations" data-zh="代号、妙语说书人、波长、传画猜词">Codenames, Dixit, Wavelength, Telestrations</p>
+                </div>
+                <div class="game-category">
+                    <img src="assets/images/family-games.jpg" alt="Family Games">
+                    <h3 data-en="Family Games" data-zh="家庭游戏">Family Games</h3>
+                    <p data-en="Monopoly, Scrabble, UNO, Exploding Kittens" data-zh="大富翁、拼字游戏、UNO、爆炸猫">Monopoly, Scrabble, UNO, Exploding Kittens</p>
+                </div>
+                <div class="game-category">
+                    <img src="assets/images/adventure-games.jpg" alt="Adventure Games">
+                    <h3 data-en="Adventure Games" data-zh="冒险游戏">Adventure Games</h3>
+                    <p data-en="Gloomhaven, Pandemic, Betrayal at House" data-zh="幽港迷城、瘟疫危机、山屋惊魂">Gloomhaven, Pandemic, Betrayal at House</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Slider Section -->
+    <section class="image-slider">
+        <div class="container" data-aos="fade-in">
+            <h2 data-en="Our Game Collection" data-zh="我们的游戏收藏">Our Game Collection</h2>
+            <div class="slider">
+                <div class="slide active">
+                    <img src="assets/images/strategy-games.jpg" alt="Board Game Collection 1">
+                </div>
+                <div class="slide">
+                    <img src="assets/images/party-games.jpg" alt="Board Game Collection 2">
+                </div>
+                <div class="slide">
+                    <img src="assets/images/family-games.jpg" alt="Board Game Collection 3">
+                </div>
+                <div class="slide">
+                    <img src="assets/images/adventure-games.jpg" alt="Board Game Collection 4">
+                </div>
+                <button class="prev" onclick="changeSlide(-1)">❮</button>
+                <button class="next" onclick="changeSlide(1)">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="about">
+        <div class="container" data-aos="slide-up">
+            <h2 data-en="Our Services" data-zh="我们的服务">Our Services</h2>
+            <div class="services">
+                <div class="service-item">
+                    <i class="fas fa-dice"></i>
+                    <h3 data-en="Game Library" data-zh="游戏库">Game Library</h3>
+                    <p data-en="Over 200+ board games for all ages and preferences" data-zh="超过200款适合所有年龄和喜好的桌游">Over 200+ board games for all ages and preferences</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-users"></i>
+                    <h3 data-en="Group Sessions" data-zh="团体聚会">Group Sessions</h3>
+                    <p data-en="Perfect for friends, families, and team building" data-zh="适合朋友、家庭和团队建设">Perfect for friends, families, and team building</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3 data-en="Game Teaching" data-zh="游戏教学">Game Teaching</h3>
+                    <p data-en="Learn new games with our friendly staff guidance" data-zh="在我们友好员工的指导下学习新游戏">Learn new games with our friendly staff guidance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA Section -->
+    <section class="contact">
+        <div class="container" data-aos="fade-in" style="text-align: center;">
+            <h2 data-en="Ready to Play?" data-zh="准备好游戏了吗？">Ready to Play?</h2>
+            <p data-en="Book your gaming session today!" data-zh="今天就预订您的游戏时间！">Book your gaming session today!</p>
+            <a href="https://wa.chatfuel.com/antzboardgame" target="_blank" class="cta-button" data-en="WhatsApp Us" data-zh="WhatsApp联系我们">WhatsApp Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AntzBoardgame. All rights reserved. | Miri, Sarawak</p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+        
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        // Auto-slide every 3 seconds
+        setInterval(() => changeSlide(1), 3000);
+        
+        // Hero background slideshow
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        
+        function showHeroSlide() {
+            heroSlides[currentHeroSlide].classList.remove('active');
+            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+            heroSlides[currentHeroSlide].classList.add('active');
+        }
+        
+        // Auto-slide hero background every 4 seconds
+        setInterval(showHeroSlide, 4000);
+    </script>
+</body>
+</html>

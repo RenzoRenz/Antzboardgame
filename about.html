@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AntzBoardgame</title>
+    <meta name="description" content="Learn about AntzBoardgame cafe in Miri, Sarawak - Your premier destination for board games and Jubensha experiences.">
+    <link rel="icon" type="image/x-icon" href="favicon.ico?v=2">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=2">
+    <link rel="icon" type="image/png" href="assets/favicon.png?v=2">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- AOS Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/language.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/Logo.jpg" alt="AntzBoardgame Logo">
+                <span>AntzBoardgame</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="home.html" class="nav-link" data-en="Home" data-zh="首页">Home</a></li>
+                <li><a href="jubensha.html" class="nav-link" data-en="Jubensha" data-zh="剧本杀">Jubensha</a></li>
+                <li><a href="boardgame.html" class="nav-link" data-en="Boardgame" data-zh="桌游">Boardgame</a></li>
+                <li><a href="about.html" class="nav-link active" data-en="About Us" data-zh="关于我们">About Us</a></li>
+                <li><a href="contact.html" class="nav-link" data-en="Contact Us" data-zh="联系我们">Contact Us</a></li>
+                <li><button id="lang-toggle" class="lang-btn">中文</button></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- About Hero Section -->
+    <section class="about-hero">
+        <div class="container" data-aos="fade-in">
+            <h1 data-en="About AntzBoardgame" data-zh="关于 AntzBoardgame">About AntzBoardgame</h1>
+            <p class="hero-desc" data-en="Your premier destination for board games and mystery adventures in Miri" data-zh="您在美里的桌游和神秘冒险首选目的地">Your premier destination for board games and mystery adventures in Miri</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container" data-aos="slide-up">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2 data-en="Our Story" data-zh="我们的故事">Our Story</h2>
+                    <p data-en="Welcome to AntzBoardgame, Miri's premier destination for board game enthusiasts! We're passionate about bringing people together through the joy of gaming, creating memorable experiences one game at a time." data-zh="欢迎来到AntzBoardgame，美里首屈一指的桌游爱好者目的地！我们热衷于通过游戏的乐趣将人们聚集在一起，一次创造一个难忘的体验。">Welcome to AntzBoardgame, Miri's premier destination for board game enthusiasts! We're passionate about bringing people together through the joy of gaming, creating memorable experiences one game at a time.</p>
+                    <p data-en="Founded with a vision to create a welcoming space for gamers of all levels, we offer an extensive collection of board games, from classic family favorites to modern strategy masterpieces and immersive Jubensha experiences." data-zh="我们的愿景是为各个水平的玩家创造一个温馨的空间，提供丰富的桌游收藏，从经典的家庭游戏到现代策略杰作和沉浸式剧本杀体验。">Founded with a vision to create a welcoming space for gamers of all levels, we offer an extensive collection of board games, from classic family favorites to modern strategy masterpieces and immersive Jubensha experiences.</p>
+                </div>
+                <div class="about-image">
+                    <img src="assets/AntzBoardgame Interior.jpg" alt="AntzBoardgame Interior">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Antz Community Section -->
+    <section class="community-section">
+        <div class="container" data-aos="zoom-in">
+            <h2 data-en="Our Antz Community" data-zh="我们的Antz社区">Our Antz Community</h2>
+            <p class="section-desc" data-en="Join our growing family of board game enthusiasts and create lasting friendships" data-zh="加入我们不断壮大的桌游爱好者大家庭，建立持久的友谊">Join our growing family of board game enthusiasts and create lasting friendships</p>
+            <div class="community-image">
+                <img src="assets/community-antz.jpg" alt="Antz Community" class="community-photo" onclick="openLightbox(this)">
+            </div>
+            <div class="community-grid">
+                <div class="community-item">
+                    <i class="fas fa-users"></i>
+                    <h3 data-en="Friendly Players" data-zh="友好玩家">Friendly Players</h3>
+                    <p data-en="Meet like-minded gamers who share your passion for board games and strategic thinking" data-zh="结识志同道合的玩家，分享您对桌游和策略思维的热情">Meet like-minded gamers who share your passion for board games and strategic thinking</p>
+                </div>
+                <div class="community-item">
+                    <i class="fas fa-calendar-week"></i>
+                    <h3 data-en="Regular Events" data-zh="定期活动">Regular Events</h3>
+                    <p data-en="Participate in tournaments, game nights, and special themed events throughout the year" data-zh="参加全年的锦标赛、游戏之夜和特殊主题活动">Participate in tournaments, game nights, and special themed events throughout the year</p>
+                </div>
+                <div class="community-item">
+                    <i class="fas fa-trophy"></i>
+                    <h3 data-en="Achievements" data-zh="成就系统">Achievements</h3>
+                    <p data-en="Unlock achievements, earn rewards, and showcase your gaming skills within our community" data-zh="解锁成就，获得奖励，在我们的社区中展示您的游戏技能">Unlock achievements, earn rewards, and showcase your gaming skills within our community</p>
+                </div>
+                <div class="community-item">
+                    <i class="fas fa-heart"></i>
+                    <h3 data-en="Inclusive Environment" data-zh="包容环境">Inclusive Environment</h3>
+                    <p data-en="Everyone is welcome regardless of experience level - from beginners to seasoned players" data-zh="无论经验水平如何，每个人都受欢迎 - 从初学者到经验丰富的玩家">Everyone is welcome regardless of experience level - from beginners to seasoned players</p>
+                </div>
+            </div>
+            
+            <div class="leaderboard-section">
+                <h3 data-en="Our Leaderboard" data-zh="我们的排行榜">Our Leaderboard</h3>
+                <p class="leaderboard-desc" data-en="Our Highscore boardgamers!" data-zh="我们的高分桌游玩家！">Our Highscore boardgamers!</p>
+                <div class="leaderboard-image">
+                    <img src="assets/community-highscore.jpg" alt="Community Highscore" class="leaderboard-photo" onclick="openLightbox(this)">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container" data-aos="zoom-in">
+            <h2 data-en="What We Offer" data-zh="我们的服务">What We Offer</h2>
+            <div class="services">
+                <div class="service-item">
+                    <i class="fas fa-dice"></i>
+                    <h3 data-en="Game Library" data-zh="游戏库">Game Library</h3>
+                    <p data-en="Extensive collection of modern and classic board games for all ages and skill levels" data-zh="丰富的现代和经典桌游收藏，适合所有年龄和技能水平">Extensive collection of modern and classic board games for all ages and skill levels</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-theater-masks"></i>
+                    <h3 data-en="Jubensha Games" data-zh="剧本杀游戏">Jubensha Games</h3>
+                    <p data-en="Immersive murder mystery role-playing experiences with multiple storylines" data-zh="沉浸式谋杀悬疑角色扮演体验，多种剧情可选">Immersive murder mystery role-playing experiences with multiple storylines</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3 data-en="Private Sessions" data-zh="私人包场">Private Sessions</h3>
+                    <p data-en="Personalized gaming experiences by appointment for individuals and groups" data-zh="为个人和团体提供预约个性化游戏体验">Personalized gaming experiences by appointment for individuals and groups</p>
+                </div>
+
+                <div class="service-item">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3 data-en="Game Tutorials" data-zh="游戏教学">Game Tutorials</h3>
+                    <p data-en="Learn new games with our friendly staff who will guide you through the rules" data-zh="由我们友好的工作人员指导您学习新游戏规则">Learn new games with our friendly staff who will guide you through the rules</p>
+                </div>
+                <div class="service-item">
+                    <i class="fas fa-heart"></i>
+                    <h3 data-en="Community Events" data-zh="社区活动">Community Events</h3>
+                    <p data-en="Regular tournaments, game nights, and special themed events for our community" data-zh="为我们的社区定期举办锦标赛、游戏之夜和特殊主题活动">Regular tournaments, game nights, and special themed events for our community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission">
+        <div class="container" data-aos="fade-in">
+            <h2 data-en="Our Mission" data-zh="我们的使命">Our Mission</h2>
+            <div class="mission-content">
+                <div class="mission-item">
+                    <h3 data-en="🎯 Bring People Together" data-zh="🎯 凝聚人心">🎯 Bring People Together</h3>
+                    <p data-en="Creating connections through shared gaming experiences" data-zh="通过共同的游戏体验建立联系">Creating connections through shared gaming experiences</p>
+                </div>
+                <div class="mission-item">
+                    <h3 data-en="🎲 Promote Gaming Culture" data-zh="🎲 推广游戏文化">🎲 Promote Gaming Culture</h3>
+                    <p data-en="Introducing more people to the wonderful world of board games" data-zh="向更多人介绍精彩的桌游世界">Introducing more people to the wonderful world of board games</p>
+                </div>
+                <div class="mission-item">
+                    <h3 data-en="🏆 Provide Quality Experiences" data-zh="🏆 提供优质体验">🏆 Provide Quality Experiences</h3>
+                    <p data-en="Ensuring every visit is memorable and enjoyable" data-zh="确保每次访问都令人难忘和愉快">Ensuring every visit is memorable and enjoyable</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 AntzBoardgame. All rights reserved. | Miri, Sarawak</p>
+        </div>
+    </footer>
+
+    <!-- AOS Animation Script -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/language.js"></script>
+    <script>
+        function openLightbox(img) {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightbox-img').src = img.src;
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
