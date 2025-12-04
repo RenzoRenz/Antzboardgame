@@ -7,7 +7,7 @@ function toggleLanguage() {
     // Update all elements with translation data
     const elements = document.querySelectorAll('[data-en][data-zh]');
     elements.forEach(element => {
-        element.textContent = element.getAttribute(`data-${currentLang}`);
+        element.innerHTML = element.getAttribute(`data-${currentLang}`);
     });
     
     // Update language button text

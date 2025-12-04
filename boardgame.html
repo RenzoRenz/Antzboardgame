@@ -44,7 +44,14 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero boardgame-hero">
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('assets/images/strategy-games.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/party-games.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/family-games.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/adventure-games.jpg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="fade-in">
             <h1 data-en="Board Game Collection" data-zh="桌游收藏" style="color: #D4AF37;">Board Game Collection</h1>
             <p class="tagline" data-en="Discover Amazing Games for Every Occasion" data-zh="为每个场合发现精彩游戏">Discover Amazing Games for Every Occasion</p>
@@ -165,6 +172,19 @@
         
         // Auto-slide every 3 seconds
         setInterval(() => changeSlide(1), 3000);
+        
+        // Hero background slideshow
+        let currentHeroSlide = 0;
+        const heroSlides = document.querySelectorAll('.hero-slide');
+        
+        function showHeroSlide() {
+            heroSlides[currentHeroSlide].classList.remove('active');
+            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+            heroSlides[currentHeroSlide].classList.add('active');
+        }
+        
+        // Auto-slide hero background every 4 seconds
+        setInterval(showHeroSlide, 4000);
     </script>
 </body>
 </html>

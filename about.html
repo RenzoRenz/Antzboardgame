@@ -67,6 +67,47 @@
         </div>
     </section>
 
+    <!-- Our Antz Community Section -->
+    <section class="community-section">
+        <div class="container" data-aos="zoom-in">
+            <h2 data-en="Our Antz Community" data-zh="我们的Antz社区">Our Antz Community</h2>
+            <p class="section-desc" data-en="Join our growing family of board game enthusiasts and create lasting friendships" data-zh="加入我们不断壮大的桌游爱好者大家庭，建立持久的友谊">Join our growing family of board game enthusiasts and create lasting friendships</p>
+            <div class="community-image">
+                <img src="assets/community-antz.jpg" alt="Antz Community" class="community-photo" onclick="openLightbox(this)">
+            </div>
+            <div class="community-grid">
+                <div class="community-item">
+                    <i class="fas fa-users"></i>
+                    <h3 data-en="Friendly Players" data-zh="友好玩家">Friendly Players</h3>
+                    <p data-en="Meet like-minded gamers who share your passion for board games and strategic thinking" data-zh="结识志同道合的玩家，分享您对桌游和策略思维的热情">Meet like-minded gamers who share your passion for board games and strategic thinking</p>
+                </div>
+                <div class="community-item">
+                    <i class="fas fa-calendar-week"></i>
+                    <h3 data-en="Regular Events" data-zh="定期活动">Regular Events</h3>
+                    <p data-en="Participate in tournaments, game nights, and special themed events throughout the year" data-zh="参加全年的锦标赛、游戏之夜和特殊主题活动">Participate in tournaments, game nights, and special themed events throughout the year</p>
+                </div>
+                <div class="community-item">
+                    <i class="fas fa-trophy"></i>
+                    <h3 data-en="Achievements" data-zh="成就系统">Achievements</h3>
+                    <p data-en="Unlock achievements, earn rewards, and showcase your gaming skills within our community" data-zh="解锁成就，获得奖励，在我们的社区中展示您的游戏技能">Unlock achievements, earn rewards, and showcase your gaming skills within our community</p>
+                </div>
+                <div class="community-item">
+                    <i class="fas fa-heart"></i>
+                    <h3 data-en="Inclusive Environment" data-zh="包容环境">Inclusive Environment</h3>
+                    <p data-en="Everyone is welcome regardless of experience level - from beginners to seasoned players" data-zh="无论经验水平如何，每个人都受欢迎 - 从初学者到经验丰富的玩家">Everyone is welcome regardless of experience level - from beginners to seasoned players</p>
+                </div>
+            </div>
+            
+            <div class="leaderboard-section">
+                <h3 data-en="Our Leaderboard" data-zh="我们的排行榜">Our Leaderboard</h3>
+                <p class="leaderboard-desc" data-en="Our Highscore boardgamers!" data-zh="我们的高分桌游玩家！">Our Highscore boardgamers!</p>
+                <div class="leaderboard-image">
+                    <img src="assets/community-highscore.jpg" alt="Community Highscore" class="leaderboard-photo" onclick="openLightbox(this)">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Services Section -->
     <section class="services-section">
         <div class="container" data-aos="zoom-in">
@@ -133,8 +174,24 @@
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
     <!-- Custom JavaScript -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/language.js"></script>
+    <script>
+        function openLightbox(img) {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightbox-img').src = img.src;
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 </body>
 </html>
