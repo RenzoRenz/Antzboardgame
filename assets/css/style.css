@@ -828,6 +828,34 @@ body {
     }
 }
 
+/* iPhone Specific Fixes */
+@media screen and (max-width: 480px) {
+    body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-font-smoothing: antialiased;
+    }
+    
+    .hero {
+        height: 100vh;
+        height: -webkit-fill-available;
+    }
+    
+    .nav-menu {
+        height: calc(100vh - 60px);
+        height: calc(-webkit-fill-available - 60px);
+    }
+    
+    input, button, select, textarea {
+        -webkit-appearance: none;
+        border-radius: 0;
+    }
+    
+    .cta-button {
+        -webkit-appearance: none;
+        border-radius: 50px;
+    }
+}
+
 /* Image Slider Styles */
 .image-slider {
     padding: 80px 0;
