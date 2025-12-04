@@ -356,7 +356,7 @@ body {
 .contact-item i {
     font-size: 2rem;
     color: #FFD700;
-    margin-right: 20px;
+    margin-right: 10px;
     min-width: 50px;
 }
 
@@ -1142,4 +1142,29 @@ body {
 
 .leaderboard-photo:hover {
     transform: scale(1.02);
+}
+
+/* Social Media Links Fix */
+.social-link {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2px;
+}
+
+.social-link i {
+    font-size: 0.9rem;
+    color: #FFD700;
+    margin-right: 3px;
+    width: 12px;
+    text-align: center;
+}
+
+.social-link a {
+    color: #fff;
+    font-size: 0.9rem;
+    text-decoration: none;
+}
+
+.social-link a:hover {
+    color: #FFD700;
 }
