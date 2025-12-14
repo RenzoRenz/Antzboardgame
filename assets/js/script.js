@@ -145,8 +145,14 @@ function showCommunitySlide(n) {
     if (communitySlides.length === 0) return;
     
     communitySlides[currentCommunitySlide].classList.remove('active');
+    communitySlides[currentCommunitySlide].classList.add('prev');
+    
     currentCommunitySlide = (n + communitySlides.length) % communitySlides.length;
-    communitySlides[currentCommunitySlide].classList.add('active');
+    
+    setTimeout(() => {
+        communitySlides.forEach(slide => slide.classList.remove('prev'));
+        communitySlides[currentCommunitySlide].classList.add('active');
+    }, 100);
 }
 
 function changeCommunitySlide(direction) {
@@ -169,7 +175,10 @@ function showLeaderboardSlide(n) {
     
     leaderboardSlides[currentLeaderboardSlide].classList.remove('active');
     currentLeaderboardSlide = (n + leaderboardSlides.length) % leaderboardSlides.length;
-    leaderboardSlides[currentLeaderboardSlide].classList.add('active');
+    
+    setTimeout(() => {
+        leaderboardSlides[currentLeaderboardSlide].classList.add('active');
+    }, 100);
 }
 
 function changeLeaderboardSlide(direction) {
