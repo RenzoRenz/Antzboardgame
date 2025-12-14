@@ -109,6 +109,80 @@ document.addEventListener('click', function(e) {
     }
 });
 
+// Lightbox functionality
+function openLightbox(imageSrc) {
+    // Create lightbox if it doesn't exist
+    let lightbox = document.getElementById('lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'lightbox';
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        `;
+        document.body.appendChild(lightbox);
+    }
+    
+    // Show lightbox with image
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = imageSrc;
+    lightbox.style.display = 'block';
+    
+    // Close lightbox when clicking close button or outside image
+    lightbox.onclick = function(e) {
+        if (e.target === lightbox || e.target.className === 'close') {
+            lightbox.style.display = 'none';
+        }
+    };
+}
+
+// Community Slideshow
+let currentCommunitySlide = 0;
+const communitySlides = document.querySelectorAll('.community-slide');
+
+function showCommunitySlide(n) {
+    if (communitySlides.length === 0) return;
+    
+    communitySlides[currentCommunitySlide].classList.remove('active');
+    currentCommunitySlide = (n + communitySlides.length) % communitySlides.length;
+    communitySlides[currentCommunitySlide].classList.add('active');
+}
+
+function changeCommunitySlide(direction) {
+    showCommunitySlide(currentCommunitySlide + direction);
+}
+
+// Auto-advance community slideshow
+if (communitySlides.length > 0) {
+    setInterval(() => {
+        changeCommunitySlide(1);
+    }, 4000);
+}
+
+// Leaderboard Slideshow
+let currentLeaderboardSlide = 0;
+const leaderboardSlides = document.querySelectorAll('.leaderboard-slide');
+
+function showLeaderboardSlide(n) {
+    if (leaderboardSlides.length === 0) return;
+    
+    leaderboardSlides[currentLeaderboardSlide].classList.remove('active');
+    currentLeaderboardSlide = (n + leaderboardSlides.length) % leaderboardSlides.length;
+    leaderboardSlides[currentLeaderboardSlide].classList.add('active');
+}
+
+function changeLeaderboardSlide(direction) {
+    showLeaderboardSlide(currentLeaderboardSlide + direction);
+}
+
+// Auto-advance leaderboard slideshow
+if (leaderboardSlides.length > 0) {
+    setInterval(() => {
+        changeLeaderboardSlide(1);
+    }, 5000);
+}
+
 // Console welcome message
 console.log('🎲 Welcome to AntzBoardgame! 🎮');
 console.log('Ready to play some amazing board games in Miri, Sarawak!');
