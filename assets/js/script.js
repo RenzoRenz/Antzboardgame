@@ -192,6 +192,10 @@ if (leaderboardSlides.length > 0) {
     }, 5000);
 }
 
+
+
+
+
 // Console welcome message
 console.log('🎲 Welcome to AntzBoardgame! 🎮');
 console.log('Ready to play some amazing board games in Miri, Sarawak!');
