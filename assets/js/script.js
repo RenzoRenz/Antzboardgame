@@ -119,7 +119,13 @@ function openLightbox(imageSrc) {
         lightbox.className = 'lightbox';
         lightbox.innerHTML = `
             <span class="close">&times;</span>
-            <img class="lightbox-content" id="lightbox-img">
+            <div class="lightbox-container">
+                <img class="lightbox-content" id="lightbox-img">
+                <div class="lightbox-details" id="lightbox-details" style="display: none;">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-description"></p>
+                </div>
+            </div>
         `;
         document.body.appendChild(lightbox);
     }
@@ -128,6 +134,7 @@ function openLightbox(imageSrc) {
     const lightboxImg = document.getElementById('lightbox-img');
     lightboxImg.src = imageSrc;
     lightbox.style.display = 'block';
+    document.getElementById('lightbox-details').style.display = 'none';
     
     // Close lightbox when clicking close button or outside image
     lightbox.onclick = function(e) {
@@ -135,6 +142,57 @@ function openLightbox(imageSrc) {
             lightbox.style.display = 'none';
         }
     };
+}
+
+// Game lightbox with details
+function openGameLightbox(imageSrc, titleEn, descEn, titleZh, descZh) {
+    // Create lightbox if it doesn't exist
+    let lightbox = document.getElementById('lightbox');
+    if (!lightbox) {
+        lightbox = document.createElement('div');
+        lightbox.id = 'lightbox';
+        lightbox.className = 'lightbox';
+        lightbox.innerHTML = `
+            <span class="close">&times;</span>
+            <div class="lightbox-container">
+                <img class="lightbox-content" id="lightbox-img">
+                <div class="lightbox-details" id="lightbox-details">
+                    <h3 id="lightbox-title"></h3>
+                    <p id="lightbox-description"></p>
+                </div>
+            </div>
+        `;
+        document.body.appendChild(lightbox);
+    }
+    
+    // Get current language
+    const currentLang = localStorage.getItem('preferred-language') || 'en';
+    const title = currentLang === 'zh' ? titleZh : titleEn;
+    const desc = currentLang === 'zh' ? descZh : descEn;
+    
+    // Show lightbox with image and details
+    document.getElementById('lightbox-img').src = imageSrc;
+    document.getElementById('lightbox-title').textContent = title;
+    document.getElementById('lightbox-description').textContent = desc;
+    document.getElementById('lightbox-details').style.display = 'block';
+    lightbox.style.display = 'block';
+    
+    // Close lightbox when clicking anywhere on background or close button
+    lightbox.onclick = function(e) {
+        lightbox.style.display = 'none';
+    };
+    
+    // Remove the prevent closing functionality - allow clicking anywhere to close
+    document.getElementById('lightbox-img').onclick = function(e) {
+        lightbox.style.display = 'none';
+    };
+    
+    const detailsElement = document.getElementById('lightbox-details');
+    if (detailsElement) {
+        detailsElement.onclick = function(e) {
+            lightbox.style.display = 'none';
+        };
+    }
 }
 
 // Community Slideshow

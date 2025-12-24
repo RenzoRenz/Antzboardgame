@@ -91,24 +91,34 @@
             <p class="section-desc" data-en="Discover our amazing collection of board games for all ages and skill levels" data-zh="发现我们为所有年龄和技能水平准备的精彩桌游收藏">Discover our amazing collection of board games for all ages and skill levels</p>
             <div class="game-gallery">
                 <div class="game-category">
-                    <img src="assets/images/strategy-games.jpg" alt="Strategy Games">
+                    <img src="assets/images/strategy-games.png" alt="Strategy Games" onclick="openGameLightbox(this.src, 'Strategy Games', 'Deep thinking and tactical gameplay', '策略游戏', '深度思考和战术游戏')">
                     <h3 data-en="Strategy Games" data-zh="策略游戏">Strategy Games</h3>
                     <p data-en="Deep thinking and tactical gameplay" data-zh="深度思考和战术游戏">Deep thinking and tactical gameplay</p>
                 </div>
                 <div class="game-category">
-                    <img src="assets/images/party-games.jpg" alt="Party Games">
+                    <img src="assets/images/party-games.png" alt="Party Games" onclick="openGameLightbox(this.src, 'Party Games', 'Fun and laughter for groups', '聚会游戏', '团体娱乐和欢声笑语')">
                     <h3 data-en="Party Games" data-zh="聚会游戏">Party Games</h3>
                     <p data-en="Fun and laughter for groups" data-zh="团体娱乐和欢声笑语">Fun and laughter for groups</p>
                 </div>
                 <div class="game-category">
-                    <img src="assets/images/family-games.jpg" alt="Family Games">
+                    <img src="assets/images/family-games.png" alt="Family Games" onclick="openGameLightbox(this.src, 'Family Games', 'Perfect for all ages', '家庭游戏', '适合所有年龄')">
                     <h3 data-en="Family Games" data-zh="家庭游戏">Family Games</h3>
                     <p data-en="Perfect for all ages" data-zh="适合所有年龄">Perfect for all ages</p>
                 </div>
                 <div class="game-category">
-                    <img src="assets/images/adventure-games.jpg" alt="Adventure Games">
+                    <img src="assets/images/adventure-games.png" alt="Adventure Games" onclick="openGameLightbox(this.src, 'Adventure Games', 'Epic quests and storytelling', '冒险游戏', '史诗任务和故事叙述')">
                     <h3 data-en="Adventure Games" data-zh="冒险游戏">Adventure Games</h3>
                     <p data-en="Epic quests and storytelling" data-zh="史诗任务和故事叙述">Epic quests and storytelling</p>
+                </div>
+                <div class="game-category">
+                    <img src="assets/images/dice-tower.png" alt="Dice Games" onclick="openGameLightbox(this.src, 'Dice Games', 'Premium dice tower available for fair rolling', '骰子游戏', '提供高级骰子塔以确保公平投骰')">
+                    <h3 data-en="Dice Games" data-zh="骰子游戏">Dice Games</h3>
+                    <p data-en="Premium dice tower available for fair rolling" data-zh="提供高级骰子塔以确保公平投骰">Premium dice tower available for fair rolling</p>
+                </div>
+                <div class="game-category">
+                    <img src="assets/images/Cooperative-Games.png" alt="Cooperative Games" onclick="openGameLightbox(this.src, 'Cooperative Games', 'Team up to achieve victory together', '合作游戏', '团队合作共同取得胜利')">
+                    <h3 data-en="Cooperative Games" data-zh="合作游戏">Cooperative Games</h3>
+                    <p data-en="Team up to achieve victory together" data-zh="团队合作共同取得胜利">Team up to achieve victory together</p>
                 </div>
             </div>
         </div>
@@ -169,11 +179,48 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <div class="lightbox-container">
+            <img class="lightbox-content" id="lightbox-img">
+            <div class="lightbox-details" id="lightbox-details">
+                <h3 id="lightbox-title"></h3>
+                <p id="lightbox-description"></p>
+            </div>
+        </div>
+    </div>
+
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Custom JavaScript -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/language.js"></script>
+    <script>
+        let currentLang = localStorage.getItem('preferred-language') || 'en';
+        
+        function openGameLightbox(imageSrc, titleEn, descEn, titleZh, descZh) {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightbox-img').src = imageSrc;
+            
+            const title = currentLang === 'zh' ? titleZh : titleEn;
+            const desc = currentLang === 'zh' ? descZh : descEn;
+            
+            document.getElementById('lightbox-title').textContent = title;
+            document.getElementById('lightbox-description').textContent = desc;
+            document.getElementById('lightbox-details').style.display = 'block';
+        }
+        
+        function openLightbox(imageSrc) {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightbox-img').src = imageSrc;
+            document.getElementById('lightbox-details').style.display = 'none';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+    </script>
 </body>
 </html>

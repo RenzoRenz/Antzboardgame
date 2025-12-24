@@ -1179,17 +1179,45 @@ body {
     cursor: pointer;
 }
 
+.lightbox-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
 .lightbox-content {
-    margin: auto;
-    display: block;
-    width: 90%;
-    max-width: 1200px;
-    max-height: 90%;
+    max-width: 90%;
+    max-height: 70%;
     object-fit: contain;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(255,255,255,0.1);
+    display: block;
+    margin: 0 auto;
+}
+
+.lightbox-details {
+    text-align: center;
+    color: #fff;
+    margin-top: 20px;
+    max-width: 600px;
+}
+
+.lightbox-details h3 {
+    color: #FFD700;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.lightbox-details p {
+    color: #ccc;
+    font-size: 1.2rem;
+    line-height: 1.6;
 }
 
 .close {
@@ -1205,6 +1233,25 @@ body {
 
 .close:hover {
     color: #FFD700;
+}
+
+@media (max-width: 768px) {
+    .lightbox-content {
+        max-height: 60%;
+    }
+    
+    .lightbox-details h3 {
+        font-size: 1.5rem;
+    }
+    
+    .lightbox-details p {
+        font-size: 1rem;
+    }
+    
+    .close {
+        font-size: 30px;
+        right: 20px;
+    }
 }
 
 .community-photo {
