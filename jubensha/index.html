@@ -227,11 +227,62 @@
         </div>
     </footer>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+    </div>
+
     <!-- AOS Animation Script -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     
     <!-- Custom JavaScript -->
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/language.js"></script>
+    <script>
+        function openLightbox(imageSrc) {
+            document.getElementById('lightbox').style.display = 'block';
+            document.getElementById('lightbox-img').src = imageSrc;
+            // Prevent body scrolling when lightbox is open
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+            // Restore body scrolling
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Close lightbox when clicking anywhere on the lightbox background
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+        
+        // Mobile touch support - close on tap anywhere
+        document.getElementById('lightbox').addEventListener('touchstart', function(e) {
+            if (e.target === this) {
+                closeLightbox();
+            }
+        });
+        
+        // Close lightbox with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+        
+        // Prevent image from closing lightbox when clicked directly
+        document.getElementById('lightbox-img').addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+        
+        // Prevent image from closing lightbox when touched directly (mobile)
+        document.getElementById('lightbox-img').addEventListener('touchstart', function(e) {
+            e.stopPropagation();
+        });
+    </script>
 </body>
 </html>
