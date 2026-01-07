@@ -251,7 +251,7 @@
     <script src="../assets/js/script.js"></script>
     <script src="../assets/js/language.js"></script>
     <script>
-        // Jubensha Hero Background Slideshow
+        // Jubensha Hero Background Slideshow with Manual Controls - Global Functions
         let heroSlideIndex = 0;
         const heroSlides = document.querySelectorAll('.hero-slide');
         
@@ -265,8 +265,13 @@
             showHeroSlide(heroSlideIndex);
         }
         
-        // Auto-advance hero slideshow every 4 seconds
-        setInterval(nextHeroSlide, 4000);
+        function prevHeroSlide() {
+            heroSlideIndex = (heroSlideIndex - 1 + heroSlides.length) % heroSlides.length;
+            showHeroSlide(heroSlideIndex);
+        }
+        
+        // Auto-advance hero slideshow every 6 seconds
+        setInterval(nextHeroSlide, 6000);
         
         function openLightbox(imageSrc) {
             document.getElementById('lightbox').style.display = 'block';

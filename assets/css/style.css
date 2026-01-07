@@ -163,7 +163,9 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     opacity: 0;
-    transition: opacity 1.5s ease-in-out;
+    transition: opacity 0.8s ease-in-out;
+    will-change: opacity;
+    backface-visibility: hidden;
 }
 
 .hero .hero-slide.active {
@@ -1196,6 +1198,60 @@ body {
     
     .image-slider h2 {
         font-size: 1.8rem;
+    }
+}
+
+.hero-prev, .hero-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 215, 0, 0.9);
+    color: #000;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+    z-index: 9999;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.hero-prev {
+    left: 20px;
+}
+
+.hero-next {
+    right: 20px;
+}
+
+.hero-prev:hover, .hero-next:hover {
+    background: #FFD700;
+    transform: translateY(-50%) scale(1.2);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+}
+
+@media (max-width: 768px) {
+    .hero-prev, .hero-next {
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .hero-prev {
+        left: 10px;
+    }
+    
+    .hero-next {
+        right: 10px;
     }
 }
 

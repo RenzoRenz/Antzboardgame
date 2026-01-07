@@ -215,18 +215,27 @@
         // Auto-slide every 3 seconds
         setInterval(() => changeSlide(1), 3000);
         
-        // Hero background slideshow
+        // Hero background slideshow with manual controls - Global Functions
         let currentHeroSlide = 0;
         const heroSlides = document.querySelectorAll('.hero-slide');
         
-        function showHeroSlide() {
-            heroSlides[currentHeroSlide].classList.remove('active');
-            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
-            heroSlides[currentHeroSlide].classList.add('active');
+        function showHeroSlide(index) {
+            heroSlides.forEach(slide => slide.classList.remove('active'));
+            heroSlides[index].classList.add('active');
         }
         
-        // Auto-slide hero background every 4 seconds
-        setInterval(showHeroSlide, 4000);
+        function nextHeroSlide() {
+            currentHeroSlide = (currentHeroSlide + 1) % heroSlides.length;
+            showHeroSlide(currentHeroSlide);
+        }
+        
+        function prevHeroSlide() {
+            currentHeroSlide = (currentHeroSlide - 1 + heroSlides.length) % heroSlides.length;
+            showHeroSlide(currentHeroSlide);
+        }
+        
+        // Auto-slide hero background every 6 seconds
+        setInterval(nextHeroSlide, 6000);
     </script>
 </body>
 </html>

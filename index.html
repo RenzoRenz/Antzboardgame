@@ -79,10 +79,10 @@
     <section id="hero" class="hero">
         <!-- Hero Background Slideshow -->
         <div class="hero-slideshow">
-            <div class="hero-slide active" style="background-image: url('assets/images/Boardgame slides/Boardgame1.jpeg');"></div>
-            <div class="hero-slide" style="background-image: url('assets/images/Boardgame slides/Boardgame2.jpeg');"></div>
-            <div class="hero-slide" style="background-image: url('assets/images/Boardgame slides/Boardgame3.jpeg');"></div>
-            <div class="hero-slide" style="background-image: url('assets/images/Boardgame slides/Boardgame4.jpeg');"></div>
+            <div class="hero-slide hero-slide-1" style="background-image: url('assets/images/Boardgame%20slides/Boardgame1.jpeg');"></div>
+            <div class="hero-slide hero-slide-2" style="background-image: url('assets/images/Boardgame%20slides/Boardgame2.jpeg');"></div>
+            <div class="hero-slide hero-slide-3" style="background-image: url('assets/images/Boardgame%20slides/Boardgame3.jpeg');"></div>
+            <div class="hero-slide hero-slide-4" style="background-image: url('assets/images/Boardgame%20slides/Boardgame4.jpeg');"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="fade-in">
@@ -92,62 +92,6 @@
             <a href="#contact" class="cta-button" data-en="Book Your Session" data-zh="预订您的游戏时间">Book Your Session</a>
         </div>
     </section>
-
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container" data-aos="slide-up">
-            <h2 data-en="About Us" data-zh="关于我们">About Us</h2>
-            <p class="story" data-en="Welcome to AntzBoardgame, Miri's premier destination for board game enthusiasts! We're passionate about bringing people together through the joy of gaming, creating memorable experiences one game at a time." data-zh="欢迎来到AntzBoardgame，美里首屈一指的桌游爱好者目的地！我们热衷于通过游戏的乐趣将人们聚集在一起，一次创造一个难忘的体验。">Welcome to AntzBoardgame, Miri's premier destination for board game enthusiasts! We're passionate about bringing people together through the joy of gaming, creating memorable experiences one game at a time.</p>
-            <div class="services">
-
-
-            </div>
-        </div>
-    </section>
-
-
-
-    <!-- Game Library Section -->
-    <section id="games" class="games">
-        <div class="container" data-aos="zoom-in">
-            <h2 data-en="Game Library" data-zh="游戏库">Game Library</h2>
-            <p class="section-desc" data-en="Discover our amazing collection of board games for all ages and skill levels" data-zh="发现我们为所有年龄和技能水平准备的精彩桌游收藏">Discover our amazing collection of board games for all ages and skill levels</p>
-            <div class="game-gallery">
-                <div class="game-category">
-                    <img src="assets/images/strategy-games.png" alt="Strategy Games" onclick="openGameLightbox(this.src, 'Strategy Games', 'Deep thinking and tactical gameplay', '策略游戏', '深度思考和战术游戏')">
-                    <h3 data-en="Strategy Games" data-zh="策略游戏">Strategy Games</h3>
-                    <p data-en="Deep thinking and tactical gameplay" data-zh="深度思考和战术游戏">Deep thinking and tactical gameplay</p>
-                </div>
-                <div class="game-category">
-                    <img src="assets/images/party-games.png" alt="Party Games" onclick="openGameLightbox(this.src, 'Party Games', 'Fun and laughter for groups', '聚会游戏', '团体娱乐和欢声笑语')">
-                    <h3 data-en="Party Games" data-zh="聚会游戏">Party Games</h3>
-                    <p data-en="Fun and laughter for groups" data-zh="团体娱乐和欢声笑语">Fun and laughter for groups</p>
-                </div>
-                <div class="game-category">
-                    <img src="assets/images/family-games.png" alt="Family Games" onclick="openGameLightbox(this.src, 'Family Games', 'Perfect for all ages', '家庭游戏', '适合所有年龄')">
-                    <h3 data-en="Family Games" data-zh="家庭游戏">Family Games</h3>
-                    <p data-en="Perfect for all ages" data-zh="适合所有年龄">Perfect for all ages</p>
-                </div>
-                <div class="game-category">
-                    <img src="assets/images/adventure-games.png" alt="Adventure Games" onclick="openGameLightbox(this.src, 'Adventure Games', 'Epic quests and storytelling', '冒险游戏', '史诗任务和故事叙述')">
-                    <h3 data-en="Adventure Games" data-zh="冒险游戏">Adventure Games</h3>
-                    <p data-en="Epic quests and storytelling" data-zh="史诗任务和故事叙述">Epic quests and storytelling</p>
-                </div>
-                <div class="game-category">
-                    <img src="assets/images/dice-tower.png" alt="Dice Games" onclick="openGameLightbox(this.src, 'Dice Games', 'Premium dice tower available for fair rolling', '骰子游戏', '提供高级骰子塔以确保公平投骰')">
-                    <h3 data-en="Dice Games" data-zh="骰子游戏">Dice Games</h3>
-                    <p data-en="Premium dice tower available for fair rolling" data-zh="提供高级骰子塔以确保公平投骰">Premium dice tower available for fair rolling</p>
-                </div>
-                <div class="game-category">
-                    <img src="assets/images/Cooperative-Games.png" alt="Cooperative Games" onclick="openGameLightbox(this.src, 'Cooperative Games', 'Team up to achieve victory together', '合作游戏', '团队合作共同取得胜利')">
-                    <h3 data-en="Cooperative Games" data-zh="合作游戏">Cooperative Games</h3>
-                    <p data-en="Team up to achieve victory together" data-zh="团队合作共同取得胜利">Team up to achieve victory together</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
 
     <!-- Footer -->
     <footer class="footer">
@@ -174,24 +118,22 @@
     <!-- Custom JavaScript -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/language.js"></script>
+    <style>
+        .hero-slide {
+            opacity: 0;
+            animation: slideshow 24s infinite;
+        }
+        .hero-slide-1 { animation-delay: 0s; }
+        .hero-slide-2 { animation-delay: 6s; }
+        .hero-slide-3 { animation-delay: 12s; }
+        .hero-slide-4 { animation-delay: 18s; }
+        
+        @keyframes slideshow {
+            0%, 25% { opacity: 1; }
+            25.01%, 100% { opacity: 0; }
+        }
+    </style>
     <script>
-        // Homepage Hero Background Slideshow
-        let homeHeroSlideIndex = 0;
-        const homeHeroSlides = document.querySelectorAll('.hero-slide');
-        
-        function showHomeHeroSlide(index) {
-            homeHeroSlides.forEach(slide => slide.classList.remove('active'));
-            homeHeroSlides[index].classList.add('active');
-        }
-        
-        function nextHomeHeroSlide() {
-            homeHeroSlideIndex = (homeHeroSlideIndex + 1) % homeHeroSlides.length;
-            showHomeHeroSlide(homeHeroSlideIndex);
-        }
-        
-        // Auto-advance homepage hero slideshow every 4 seconds
-        setInterval(nextHomeHeroSlide, 4000);
-        
         let currentLang = localStorage.getItem('preferred-language') || 'en';
         
         function openGameLightbox(imageSrc, titleEn, descEn, titleZh, descZh) {
