@@ -77,6 +77,14 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
+        <!-- Hero Background Slideshow -->
+        <div class="hero-slideshow">
+            <div class="hero-slide active" style="background-image: url('assets/images/Boardgame slides/Boardgame1.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/Boardgame slides/Boardgame2.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/Boardgame slides/Boardgame3.jpeg');"></div>
+            <div class="hero-slide" style="background-image: url('assets/images/Boardgame slides/Boardgame4.jpeg');"></div>
+        </div>
+        <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="fade-in">
             <img src="assets/Logo.jpg" alt="AntzBoardgame Logo" class="logo">
             <h1 style="color: #D4AF37;">AntzBoardgame</h1>
@@ -167,6 +175,23 @@
     <script src="assets/js/script.js"></script>
     <script src="assets/js/language.js"></script>
     <script>
+        // Homepage Hero Background Slideshow
+        let homeHeroSlideIndex = 0;
+        const homeHeroSlides = document.querySelectorAll('.hero-slide');
+        
+        function showHomeHeroSlide(index) {
+            homeHeroSlides.forEach(slide => slide.classList.remove('active'));
+            homeHeroSlides[index].classList.add('active');
+        }
+        
+        function nextHomeHeroSlide() {
+            homeHeroSlideIndex = (homeHeroSlideIndex + 1) % homeHeroSlides.length;
+            showHomeHeroSlide(homeHeroSlideIndex);
+        }
+        
+        // Auto-advance homepage hero slideshow every 4 seconds
+        setInterval(nextHomeHeroSlide, 4000);
+        
         let currentLang = localStorage.getItem('preferred-language') || 'en';
         
         function openGameLightbox(imageSrc, titleEn, descEn, titleZh, descZh) {
