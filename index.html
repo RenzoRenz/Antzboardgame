@@ -83,6 +83,7 @@
             <div class="hero-slide hero-slide-2" style="background-image: url('assets/images/Boardgame%20slides/Boardgame2.jpeg');"></div>
             <div class="hero-slide hero-slide-3" style="background-image: url('assets/images/Boardgame%20slides/Boardgame3.jpeg');"></div>
             <div class="hero-slide hero-slide-4" style="background-image: url('assets/images/Boardgame%20slides/Boardgame4.jpeg');"></div>
+            <div class="hero-slide hero-slide-5" style="background-image: url('assets/images/Boardgame%20slides/Boardgame5.jpeg');"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content" data-aos="fade-in">
@@ -118,19 +119,21 @@
     <!-- Custom JavaScript -->
     <script src="assets/js/script.js"></script>
     <script src="assets/js/language.js"></script>
+    <script src="assets/js/seasonal.js"></script>
     <style>
         .hero-slide {
             opacity: 0;
-            animation: slideshow 24s infinite;
+            animation: slideshow 30s infinite;
         }
         .hero-slide-1 { animation-delay: 0s; }
         .hero-slide-2 { animation-delay: 6s; }
         .hero-slide-3 { animation-delay: 12s; }
         .hero-slide-4 { animation-delay: 18s; }
+        .hero-slide-5 { animation-delay: 24s; }
         
         @keyframes slideshow {
-            0%, 25% { opacity: 1; }
-            25.01%, 100% { opacity: 0; }
+            0%, 20% { opacity: 1; }
+            20.01%, 100% { opacity: 0; }
         }
     </style>
     <script>
