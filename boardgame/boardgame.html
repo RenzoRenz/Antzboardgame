@@ -98,9 +98,19 @@
 <a class="nav-link" href="/contact/">Contact Us</a>
 </div>
 <div class="flex items-center space-x-4">
-<button class="md:hidden p-2 rounded-full text-white">
+<button id="mobile-menu-button" class="md:hidden p-2 rounded-full text-white">
 <span class="material-icons-outlined text-3xl">menu</span>
 </button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-background-dark/95 backdrop-blur-lg border-t border-white/10">
+<div class="px-6 py-4 space-y-4">
+<a class="block text-white hover:text-primary transition-colors" href="/">Home</a>
+<a class="block text-white hover:text-primary transition-colors" href="/jubensha/">Jubensha</a>
+<a class="block text-white hover:text-primary transition-colors" href="/boardgame/">Boardgame</a>
+<a class="block text-white hover:text-primary transition-colors" href="/about/">About Us</a>
+<a class="block text-white hover:text-primary transition-colors" href="/contact/">Contact Us</a>
 </div>
 </div>
 </header>
@@ -242,5 +252,17 @@ Miri's Premier Gaming Hub
 </div>
 </div>
 </footer>
+
+<script>
+// Mobile menu functionality
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
+</script>
 
 </body></html>

@@ -144,7 +144,19 @@
 <a class="nav-link" href="/contact/">Contact Us</a>
 </nav>
 <div class="md:hidden">
+<button id="mobile-menu-button" class="p-2 rounded-full text-white">
 <span class="material-symbols-outlined text-white text-3xl cursor-pointer">menu</span>
+</button>
+</div>
+</div>
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="hidden md:hidden bg-background-dark/95 backdrop-blur-lg border-t border-blood-crimson/20">
+<div class="px-6 py-4 space-y-4">
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/">Home</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/jubensha/">Jubensha</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/boardgame/">Boardgame</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/about/">About Us</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/contact/">Contact Us</a>
 </div>
 </div>
 </header>
@@ -386,6 +398,16 @@ function nextJubenshaSlide() {
 
 // Auto-advance slideshow every 4 seconds
 setInterval(nextJubenshaSlide, 4000);
+
+// Mobile menu functionality
+const mobileMenuButton = document.getElementById('mobile-menu-button');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
 </script>
 
 </body></html>
