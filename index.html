@@ -1,198 +1,271 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>AntzBoardgame - Your Gaming Adventure Starts Here</title>
-    <meta name="description" content="🎲 AntzBoardgame & AntzJubensha in Miri, Sarawak - Where board games come alive! Book your gaming session by appointment.">
-    <meta property="og:title" content="AntzBoardgame - Your Gaming Adventure Starts Here">
-    <meta property="og:description" content="🎲 AntzBoardgame & AntzJubensha in Miri, Sarawak - Where board games come alive! Book your gaming session by appointment.">
-    <meta property="og:image" content="https://www.antzboardgame.com/assets/Logo.jpg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:url" content="https://www.antzboardgame.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="AntzBoardgame">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="AntzBoardgame - Your Gaming Adventure Starts Here">
-    <meta name="twitter:description" content="🎲 AntzBoardgame & AntzJubensha in Miri, Sarawak - Where board games come alive! Book your gaming session by appointment.">
-    <meta name="twitter:image" content="https://www.antzboardgame.com/assets/Logo.jpg">
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjMyIiBoZWlnaHQ9IjMyIiByeD0iNCIgZmlsbD0iIzAwMCIvPgo8dGV4dCB4PSIxNiIgeT0iMjIiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNGRkQ3MDAiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkE8L3RleHQ+Cjwvc3ZnPgo=">
-    <link rel="icon" type="image/x-icon" href="favicon.ico?v=3">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?v=3">
-    <link rel="icon" type="image/png" href="assets/favicon.png?v=3">
-    <link rel="apple-touch-icon" href="assets/favicon.png?v=3">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon.png?v=3">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- AOS Animation -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/language.css">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFF3QDGK36"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-KFF3QDGK36');
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AntzBoardgame | Board Game Cafe in Miri</title>
+<meta property="og:title" content="AntzBoardgame | Board Game Cafe in Miri">
+<meta property="og:description" content="Where Games Come Alive in Miri! Experience premium tabletop gaming with 353+ boardgames and 119+ Jubensha mystery games.">
+<meta property="og:image" content="assets/logos/logo.jpg">
+<meta property="og:url" content="https://antzboardgame.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="AntzBoardgame | Board Game Cafe in Miri">
+<meta name="twitter:description" content="Where Games Come Alive in Miri! Experience premium tabletop gaming with 353+ boardgames and 119+ Jubensha mystery games.">
+<meta name="twitter:image" content="assets/logos/logo.jpg">
+<link rel="icon" type="image/x-icon" href="assets/logos/favicon.ico">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#f59e0b", // Gold/Amber color from logo
+              secondary: "#ef4444", // Vibrant coral/red for CTA
+              "background-light": "#fafaf9",
+              "background-dark": "#0c0a09",
+              "accent-brown": "#451a03",
+            },
+            fontFamily: {
+              display: ["Outfit", "sans-serif"],
+              heading: ["Montserrat", "sans-serif"],
+            },
+            borderRadius: {
+              DEFAULT: "0.75rem",
+              'xl': '1.5rem',
+            },
+          },
+        },
+      };
     </script>
-</head>
-<body>
-    <!-- Navigation Bar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="/">
-                    <img src="assets/Logo.jpg" alt="AntzBoardgame Logo">
-                    <span>AntzBoardgame</span>
-                </a>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="/" class="nav-link" data-en="Home" data-zh="首页">Home</a></li>
-                <li><a href="/jubensha/" class="nav-link" data-en="Jubensha" data-zh="剧本杀">Jubensha</a></li>
-                <li><a href="/boardgame/" class="nav-link" data-en="Boardgame" data-zh="桌游">Boardgame</a></li>
-                <li><a href="/about/" class="nav-link" data-en="About Us" data-zh="关于我们">About Us</a></li>
-                <li><a href="/contact/" class="nav-link" data-en="Contact Us" data-zh="联系我们">Contact Us</a></li>
-                <li><button id="lang-toggle" class="lang-btn">中文</button></li>
-            </ul>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="hero" class="hero">
-        <!-- Hero Background Slideshow -->
-        <div class="hero-slideshow">
-            <div class="hero-slide hero-slide-1" style="background-image: url('assets/images/Boardgame%20slides/Boardgame1.jpeg');"></div>
-            <div class="hero-slide hero-slide-2" style="background-image: url('assets/images/Boardgame%20slides/Boardgame2.jpeg');"></div>
-            <div class="hero-slide hero-slide-3" style="background-image: url('assets/images/Boardgame%20slides/Boardgame3.jpeg');"></div>
-            <div class="hero-slide hero-slide-4" style="background-image: url('assets/images/Boardgame%20slides/Boardgame4.jpeg');"></div>
-            <div class="hero-slide hero-slide-5" style="background-image: url('assets/images/Boardgame%20slides/Boardgame5.jpeg');"></div>
-        </div>
-        <div class="hero-overlay"></div>
-        <div class="hero-content" data-aos="fade-in">
-            <img src="assets/Logo.jpg" alt="AntzBoardgame Logo" class="logo">
-            <h1 style="color: #D4AF37;">AntzBoardgame</h1>
-            <p class="tagline" data-en="Where Games Come Alive in Miri!" data-zh="让游戏在美里活起来！">Where Games Come Alive in Miri!</p>
-            <a href="/contact/" class="cta-button" data-en="Book Your Session" data-zh="预订您的游戏时间">Book Your Session</a>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2017 AntzBoardgame. All rights reserved. | Miri, Sarawak</p>
-        </div>
-    </footer>
-
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <span class="close">&times;</span>
-        <div class="lightbox-container">
-            <img class="lightbox-content" id="lightbox-img">
-            <div class="lightbox-details" id="lightbox-details">
-                <h3 id="lightbox-title"></h3>
-                <p id="lightbox-description"></p>
-            </div>
-        </div>
-    </div>
-
-    <!-- AOS Animation Script -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    
-    <!-- Custom JavaScript -->
-    <script src="assets/js/script.js"></script>
-    <script src="assets/js/language.js"></script>
-    <script src="assets/js/seasonal.js"></script>
-    <style>
-        .hero-slide {
-            opacity: 0;
-            animation: slideshow 30s infinite;
+<style>
+        .glass-header {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        .hero-slide-1 { animation-delay: 0s; }
-        .hero-slide-2 { animation-delay: 6s; }
-        .hero-slide-3 { animation-delay: 12s; }
-        .hero-slide-4 { animation-delay: 18s; }
-        .hero-slide-5 { animation-delay: 24s; }
-        
-        @keyframes slideshow {
-            0%, 20% { opacity: 1; }
-            20.01%, 100% { opacity: 0; }
+        .dark .glass-header {
+            background: rgba(12, 10, 9, 0.7);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .hero-overlay {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.7) 100%);
+        }
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f59e0b;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+        .slide.active {
+            opacity: 1;
         }
     </style>
-    <script>
-        let currentLang = localStorage.getItem('preferred-language') || 'en';
-        
-        function openGameLightbox(imageSrc, titleEn, descEn, titleZh, descZh) {
-            document.getElementById('lightbox').style.display = 'block';
-            document.getElementById('lightbox-img').src = imageSrc;
-            document.body.style.overflow = 'hidden';
-            
-            const title = currentLang === 'zh' ? titleZh : titleEn;
-            const desc = currentLang === 'zh' ? descZh : descEn;
-            
-            document.getElementById('lightbox-title').textContent = title;
-            document.getElementById('lightbox-description').textContent = desc;
-            document.getElementById('lightbox-details').style.display = 'block';
-        }
-        
-        function openLightbox(imageSrc) {
-            document.getElementById('lightbox').style.display = 'block';
-            document.getElementById('lightbox-img').src = imageSrc;
-            document.getElementById('lightbox-details').style.display = 'none';
-            document.body.style.overflow = 'hidden';
-        }
-        
-        function closeLightbox() {
-            document.getElementById('lightbox').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-        
-        // Close lightbox when clicking anywhere on the lightbox background
-        document.getElementById('lightbox').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
-        
-        // Mobile touch support
-        document.getElementById('lightbox').addEventListener('touchstart', function(e) {
-            if (e.target === this) {
-                closeLightbox();
-            }
-        });
-        
-        // Close with Escape key
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
-            }
-        });
-        
-        // Prevent image from closing lightbox
-        document.getElementById('lightbox-img').addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-        
-        document.getElementById('lightbox-img').addEventListener('touchstart', function(e) {
-            e.stopPropagation();
-        });
-    </script>
-</body>
-</html>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-stone-800 dark:text-stone-200 antialiased overflow-x-hidden">
+<nav class="fixed top-0 left-0 right-0 z-50 glass-header">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
+<div class="flex items-center space-x-3">
+<div class="w-12 h-12 rounded-full flex items-center justify-center border-2 border-primary overflow-hidden" style="background-color: #202e5f;">
+<img alt="Antz Logo" class="w-8 h-8 object-cover rounded-full" src="assets/logos/logo.jpg"/>
+</div>
+<span class="text-xl font-heading font-bold tracking-tight text-white"><span class="text-primary">Antz</span><span class="text-primary">Boardgame</span></span>
+</div>
+<div class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wide text-white/90">
+<a class="nav-link text-primary" href="/contact/">Home</a>
+<a class="nav-link" href="/jubensha/">Jubensha</a>
+<a class="nav-link" href="/boardgame/">Boardgame</a>
+<a class="nav-link" href="/about/">About Us</a>
+<a class="nav-link" href="/contact/">Contact Us</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="md:hidden p-2 rounded-full text-white">
+<span class="material-icons-outlined text-3xl">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<main class="relative h-screen flex items-center justify-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<div class="slideshow-container w-full h-full">
+<div class="slide active">
+<img alt="Boardgame Collection 1" class="w-full h-full object-cover" src="assets/images/Boardgame slides/Boardgame1.jpeg"/>
+</div>
+<div class="slide">
+<img alt="Boardgame Collection 2" class="w-full h-full object-cover" src="assets/images/Boardgame slides/Boardgame2.jpeg"/>
+</div>
+<div class="slide">
+<img alt="Boardgame Collection 3" class="w-full h-full object-cover" src="assets/images/Boardgame slides/Boardgame3.jpeg"/>
+</div>
+</div>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 text-center px-4 max-w-4xl mx-auto flex flex-col items-center">
+<div class="mb-8 animate-float">
+<div class="w-32 h-32 md:w-40 md:h-40 rounded-full border-4 border-primary flex items-center justify-center shadow-2xl overflow-hidden" style="background-color: #202e5f;">
+<img alt="Antz Main Logo" class="w-28 h-28 md:w-36 md:h-36 object-cover rounded-full" src="assets/logos/logo.jpg"/>
+</div>
+</div>
+<h1 class="text-5xl md:text-8xl font-heading font-extrabold text-white mb-6 tracking-tight drop-shadow-lg">
+                <span class="text-primary">Antz</span><span class="text-primary">Boardgame</span>
+</h1>
+<p class="text-xl md:text-2xl text-stone-200 font-light mb-12 max-w-2xl mx-auto tracking-wide">
+                Where Games Come Alive in Miri!
+            </p>
+<div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
+<a href="/contact/" class="group relative px-10 py-5 bg-gradient-to-r from-secondary to-orange-500 rounded-full text-white font-bold text-lg shadow-xl hover:shadow-secondary/30 hover:-translate-y-1 transition-all duration-300 inline-block">
+<span class="relative flex items-center">
+                        Book Your Session
+                        <span class="material-icons-outlined ml-2 group-hover:translate-x-1 transition-transform">calendar_month</span>
+</span>
+</a>
+<button class="px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white font-bold text-lg transition-all duration-300">
+                    Browse Games
+                </button>
+</div>
+<div class="mt-20 grid grid-cols-2 gap-8 md:gap-16 border-t border-white/10 pt-10">
+<div class="text-center">
+<div class="text-3xl font-bold text-primary">353+</div>
+<div class="text-xs uppercase tracking-widest text-stone-300 font-medium">Boardgames</div>
+</div>
+<div class="text-center">
+<div class="text-3xl font-bold text-primary">119+</div>
+<div class="text-xs uppercase tracking-widest text-stone-300 font-medium">Jubensha</div>
+</div>
+</div>
+</div>
+<div class="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce opacity-70">
+<span class="material-icons-outlined text-white text-3xl">expand_more</span>
+</div>
+</main>
+<section class="py-24 px-6 lg:px-12 bg-white dark:bg-zinc-900">
+<div class="max-w-7xl mx-auto">
+<div class="grid md:grid-cols-2 gap-16 items-center">
+<div>
+<span class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Our Story</span>
+<h2 class="text-4xl font-heading font-bold mb-6 text-zinc-900 dark:text-white">Experience Miri's Premium Tabletop Hub</h2>
+<p class="text-lg text-stone-600 dark:text-stone-400 mb-8 leading-relaxed">
+                        At AntzBoardgame, we believe in the power of social interaction through play. Whether you're a hardcore strategist, a casual player, or a fan of immersive "Jubensha" roleplay, we provide the perfect sanctuary for your gaming adventures.
+                    </p>
+<div class="flex items-start space-x-4">
+<div class="bg-primary/10 p-3 rounded-xl text-primary">
+<span class="material-icons-outlined">groups</span>
+</div>
+<div>
+<h4 class="font-bold text-zinc-900 dark:text-white">Community Driven</h4>
+<p class="text-sm text-stone-500">Regular tournaments and community game nights.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-4">
+<img alt="Game shelf" class="rounded-2xl shadow-lg h-64 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD7I6z4whC7K4X_UxTZ7VdgcKnJn1Ur0skOs7TODXRB94qJ05-gXhUdV54AqWsctoKvA7iKSGhMDjYtKA40RfQUryjIT7FWyIOZ7zBd0XkchqKITX2i6vyt-hNJL7wYZnaCyy86fm4L32LxU1yq5DJeiu5ra_1lWU7F3sEb4POCVaUOjRivHQEMLAXdiaNNYVf9yXoCyDJjlaoNmEm1HZnRvLEO5xKQi8bgJPb4vhEn4lNt_SYm6kfHhqhBpD7eJICdp1xoIl0Ksawt"/>
+<img alt="Playing cards" class="rounded-2xl shadow-lg h-40 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCFrzJ3ipKlen1rwV1uPf_hfnJq3Ix9lKtASC_w1Rj2szvOjuFnsB7ZoaQa5HRNM4ODtWwcAhMMzMlVLmTy-Qax5wTRARUuUXg2md13VewIZPD6zgm0qOfyI7RAzrgFs5hf356XWRpbkFxU5PXmwDPHxW7obuEhYxGgn3hGiGU0SxIEQ-BNS3kVoWO9FqnekTdJS_04at57DaY_aDoLvqIkxAEmdpvlq-reOsSUrNpreu-r6vlUXJ2b0hf5zBuJPK8WhRI1GRrgIZ3x"/>
+</div>
+<div class="space-y-4 pt-8">
+<img alt="Game night" class="rounded-2xl shadow-lg h-40 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3sw1XCT4n8TcQaEsucZIfdytkrHXx5JphFSVMinYJ0O0vvVABmD85goqP_zlGPm6BYzeefci__iXwTwdg9Pn7KcopXIxVbDO-YDiO7txRFH3oH7wm7JQGdnlsYqwxAmkJb1lUEbgTGqmxX9NvmnlfVPhaE5QZyHbJBGcSyJb69pmfkGtwaK_iVqeAl4446Yv6cuk0DBDQ1sx6OWZ1frmIrubM3-rsICUs4JdhsQCYCo9gKZN8_hPvbd8jpDyE25D9DbXmSBUSDIxn"/>
+<img alt="Dice" class="rounded-2xl shadow-lg h-64 w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVFkIrkJ8ykmLzqK-T3ATYGQZDGTE8ORC-Izwx1-YwLmqRhrJN2LSyKclt4QC9Ot9LNMqxDs9Z28HxhPZVVhVmVLiUe28Esn2kfX6OkESIRqFmn-7zPSs0pq1NWhW2FEunW-Lt0wL3RJm0MwnSpoEnf398aJksCr4zwq0ov-k_f8ybMMna8F3mlAEghS-TX1UFE1UL0D-OXp0j821uABSBVuKxSFzdUx8-AAL2EvFOhSnWNFKoWR_R6rQEEMVGhr7eF0i-kF-rrGl3"/>
+</div>
+</div>
+</div>
+</div>
+</section>
+<footer class="bg-stone-900 dark:bg-black text-white py-12 px-6 lg:px-12 border-t border-white/5">
+<div class="max-w-7xl mx-auto">
+<div class="flex flex-col md:flex-row justify-between items-center space-y-6 md:space-y-0">
+<div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0 md:space-x-6">
+<div class="flex items-center space-x-3">
+<div class="w-16 h-16 rounded-full flex items-center justify-center border-2 border-primary overflow-hidden" style="background-color: #202e5f;">
+<img alt="AntzBoardgame Logo" class="w-14 h-14 object-cover rounded-full" src="assets/logos/logo.jpg"/>
+</div>
+<div class="text-center md:text-left">
+<h3 class="text-xl font-heading font-bold tracking-tight">
+<span class="text-primary">Antz</span><span class="text-primary">Boardgame</span>
+</h3>
+<p class="text-sm text-stone-400 mt-1">
+Miri's Premier Gaming Hub
+</p>
+</div>
+</div>
+<p class="text-sm text-stone-400 text-center md:text-left">
+© 2017 AntzBoardgame. All rights reserved. | Miri, Sarawak
+</p>
+</div>
+<div class="flex space-x-6">
+<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+</svg>
+</a>
+<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+</svg>
+</a>
+<a class="text-stone-400 hover:text-primary transition-colors" href="https://wa.chatfuel.com/antzboardgame">
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.488"/>
+</svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+
+<script>
+// Slideshow functionality
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    slides.forEach(slide => slide.classList.remove('active'));
+    slides[index].classList.add('active');
+}
+
+function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    showSlide(currentSlide);
+}
+
+// Auto-advance slideshow every 4 seconds
+setInterval(nextSlide, 4000);
+</script>
+
+</body></html>
