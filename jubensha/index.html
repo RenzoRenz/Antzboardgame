@@ -137,11 +137,17 @@
 <span class="text-xl font-heading font-bold tracking-tight text-white"><span class="text-tarnished-gold">Antz</span><span class="text-tarnished-gold">Boardgame</span></span>
 </a>
 <nav class="hidden md:flex items-center gap-10">
-<a class="nav-link" href="/">Home</a>
-<a class="nav-link nav-link-active" href="/jubensha/">Jubensha</a>
-<a class="nav-link" href="/boardgame/">Boardgame</a>
-<a class="nav-link" href="/about/">About Us</a>
-<a class="nav-link" href="/contact/">Contact Us</a>
+<a class="nav-link" href="/" data-translate="home">Home</a>
+<a class="nav-link nav-link-active" href="/jubensha/" data-translate="jubensha">Jubensha</a>
+<a class="nav-link" href="/boardgame/" data-translate="boardgame">Boardgame</a>
+<a class="nav-link" href="/about/" data-translate="about">About Us</a>
+<a class="nav-link" href="/contact/" data-translate="contact">Contact Us</a>
+<div class="language-selector">
+<button id="language-toggle-desktop" onclick="toggleLanguage()" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-blood-crimson/20 hover:bg-blood-crimson/30 border border-blood-crimson/40 transition-all hover:scale-105">
+<span class="material-symbols-outlined text-blood-crimson">language</span>
+<span id="current-lang-desktop" class="text-blood-crimson font-bold">EN</span>
+</button>
+</div>
 </nav>
 <div class="md:hidden">
 <button id="mobile-menu-button" class="p-2 rounded-full text-white">
@@ -152,11 +158,11 @@
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden md:hidden bg-background-dark/95 backdrop-blur-lg border-t border-blood-crimson/20">
 <div class="px-6 py-4 space-y-4">
-<a class="block text-white hover:text-blood-crimson transition-colors" href="/">Home</a>
-<a class="block text-white hover:text-blood-crimson transition-colors" href="/jubensha/">Jubensha</a>
-<a class="block text-white hover:text-blood-crimson transition-colors" href="/boardgame/">Boardgame</a>
-<a class="block text-white hover:text-blood-crimson transition-colors" href="/about/">About Us</a>
-<a class="block text-white hover:text-blood-crimson transition-colors" href="/contact/">Contact Us</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/" data-translate="home">Home</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/jubensha/" data-translate="jubensha">Jubensha</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/boardgame/" data-translate="boardgame">Boardgame</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/about/" data-translate="about">About Us</a>
+<a class="block text-white hover:text-blood-crimson transition-colors" href="/contact/" data-translate="contact">Contact Us</a>
 </div>
 </div>
 </header>
@@ -173,7 +179,7 @@
 <h1 class="text-6xl md:text-9xl font-serif-noir font-black text-white smoke-text tracking-widest mb-6 drop-shadow-[0_10px_30px_rgba(0,0,0,0.8)] uppercase">
             <span class="text-tarnished-gold">Antzjuben</span><span class="text-blood-crimson">sha</span>
 </h1>
-<p class="text-xl md:text-2xl text-tarnished-gold/80 font-serif-noir italic tracking-widest max-w-2xl mx-auto">Where secrets die and mysteries come alive.</p>
+<p class="text-xl md:text-2xl text-tarnished-gold/80 font-serif-noir italic tracking-widest max-w-2xl mx-auto" data-translate="jubenshaSubtitle">Where secrets die and mysteries come alive.</p>
 </div>
 <div class="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-50">
 <span class="material-symbols-outlined text-blood-crimson text-4xl animate-bounce">keyboard_double_arrow_down</span>
@@ -181,26 +187,26 @@
 </section>
 <section class="py-32 relative max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-20 items-center">
 <div class="order-2 lg:order-1 relative z-10">
-<h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-10 tracking-tight">The Art of the Script</h2>
-<p class="text-gray-400 text-xl leading-relaxed mb-10 font-medium font-serif-noir italic">
+<h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-10 tracking-tight" data-translate="jubenshaArt">The Art of the Script</h2>
+<p class="text-gray-400 text-xl leading-relaxed mb-10 font-medium font-serif-noir italic" data-translate="jubenshaDesc">
             Jubensha (剧本杀) is not merely a game. It is a descent into a forgotten narrative where every whisper carries weight and every shadow hides a suspect.
         </p>
 <ul class="space-y-6">
 <li class="flex items-center gap-4 text-gray-400 text-lg group">
 <span class="material-symbols-outlined text-blood-crimson bg-blood-crimson/5 p-2 rounded-lg text-2xl flicker-glow">group</span>
-<span class="group-hover:text-tarnished-gold transition-colors">3-8 Players Entangled</span>
+<span class="group-hover:text-tarnished-gold transition-colors" data-translate="playersEntangled">3-8 Players Entangled</span>
 </li>
 <li class="flex items-center gap-4 text-gray-400 text-lg group">
 <span class="material-symbols-outlined text-blood-crimson bg-blood-crimson/5 p-2 rounded-lg text-2xl flicker-glow">schedule</span>
-<span class="group-hover:text-tarnished-gold transition-colors">2-4 Hours of Suspense</span>
+<span class="group-hover:text-tarnished-gold transition-colors" data-translate="hoursOfSuspense">2-4 Hours of Suspense</span>
 </li>
 <li class="flex items-center gap-4 text-gray-400 text-lg group">
 <span class="material-symbols-outlined text-blood-crimson bg-blood-crimson/5 p-2 rounded-lg text-2xl flicker-glow">auto_stories</span>
-<span class="group-hover:text-tarnished-gold transition-colors">Multiple storylines available</span>
+<span class="group-hover:text-tarnished-gold transition-colors" data-translate="multipleStorylines">Multiple storylines available</span>
 </li>
 <li class="flex items-center gap-4 text-gray-400 text-lg group">
 <span class="material-symbols-outlined text-blood-crimson bg-blood-crimson/5 p-2 rounded-lg text-2xl flicker-glow">translate</span>
-<span class="group-hover:text-tarnished-gold transition-colors">Available in Chinese & English</span>
+<span class="group-hover:text-tarnished-gold transition-colors" data-translate="availableLanguages">Available in Chinese & English</span>
 </li>
 </ul>
 </div>
@@ -216,7 +222,7 @@
 <div class="absolute inset-0 fog-overlay opacity-20"></div>
 <div class="max-w-7xl mx-auto px-6 relative z-10">
 <div class="text-center mb-20">
-<h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-4 tracking-widest uppercase">Available Dossiers</h2>
+<h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-4 tracking-widest uppercase" data-translate="availableDossiers">Available Dossiers</h2>
 <div class="h-0.5 w-40 bg-gradient-to-r from-transparent via-blood-crimson to-transparent mx-auto"></div>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -224,32 +230,32 @@
 <div class="size-16 border-2 border-black/10 rounded-full flex items-center justify-center mb-6 bg-blood-crimson/5">
 <span class="material-symbols-outlined text-3xl text-black/70">search</span>
 </div>
-<h3 class="font-serif-noir text-2xl font-black mb-4 text-black/80">Mystery & Crime</h3>
-<p class="text-black/60 text-sm leading-relaxed font-serif-noir italic">Evidence reports and witness statements await your cold analysis.</p>
+<h3 class="font-serif-noir text-2xl font-black mb-4 text-black/80" data-translate="mysteryCrime">Mystery & Crime</h3>
+<p class="text-black/60 text-sm leading-relaxed font-serif-noir italic" data-translate="mysteryCrimeDesc">Evidence reports and witness statements await your cold analysis.</p>
 <div class="mt-8 opacity-20"><span class="material-symbols-outlined text-6xl">fingerprint</span></div>
 </div>
 <div class="case-file-card burnt-edge p-8 rounded-sm group hover:-translate-y-2 transition-transform duration-500 magnify-cursor">
 <div class="size-16 border-2 border-black/10 rounded-full flex items-center justify-center mb-6 bg-blood-crimson/5">
 <span class="material-symbols-outlined text-3xl text-black/70">dark_mode</span>
 </div>
-<h3 class="font-serif-noir text-2xl font-black mb-4 text-black/80">Horror & Thriller</h3>
-<p class="text-black/60 text-sm leading-relaxed font-serif-noir italic">Some secrets were meant to stay buried. Pray they don't find you.</p>
+<h3 class="font-serif-noir text-2xl font-black mb-4 text-black/80" data-translate="horrorThriller">Horror & Thriller</h3>
+<p class="text-black/60 text-sm leading-relaxed font-serif-noir italic" data-translate="horrorThrillerDesc">Some secrets were meant to stay buried. Pray they don't find you.</p>
 <div class="mt-8 opacity-20"><span class="material-symbols-outlined text-6xl">skull</span></div>
 </div>
 <div class="case-file-card burnt-edge p-8 rounded-sm group hover:-translate-y-2 transition-transform duration-500 magnify-cursor">
 <div class="size-16 border-2 border-black/10 rounded-full flex items-center justify-center mb-6 bg-blood-crimson/5">
 <span class="material-symbols-outlined text-3xl text-black/70">castle</span>
 </div>
-<h3 class="font-serif-noir text-2xl font-black mb-4 text-black/80">Historical Noir</h3>
-<p class="text-black/60 text-sm leading-relaxed font-serif-noir italic">Step into the blood-soaked pages of the past. History is written in ink.</p>
+<h3 class="font-serif-noir text-2xl font-black mb-4 text-black/80" data-translate="historicalNoir">Historical Noir</h3>
+<p class="text-black/60 text-sm leading-relaxed font-serif-noir italic" data-translate="historicalNoirDesc">Step into the blood-soaked pages of the past. History is written in ink.</p>
 <div class="mt-8 opacity-20"><span class="material-symbols-outlined text-6xl">history_edu</span></div>
 </div>
 <div class="case-file-card burnt-edge p-8 rounded-sm group hover:-translate-y-2 transition-transform duration-500 magnify-cursor">
 <div class="size-16 border-2 border-black/10 rounded-full flex items-center justify-center mb-6 bg-blood-crimson/5">
 <span class="material-symbols-outlined text-3xl text-black/70">magic_button</span>
 </div>
-<h3 class="font-serif-noir text-2xl font-black mb-4 text-black/80">Dark Fantasy</h3>
-<p class="text-black/60 text-sm leading-relaxed font-serif-noir italic">Where magic is a curse and the monsters wear human faces.</p>
+<h3 class="font-serif-noir text-2xl font-black mb-4 text-black/80" data-translate="darkFantasy">Dark Fantasy</h3>
+<p class="text-black/60 text-sm leading-relaxed font-serif-noir italic" data-translate="darkFantasyDesc">Where magic is a curse and the monsters wear human faces.</p>
 <div class="mt-8 opacity-20"><span class="material-symbols-outlined text-6xl">auto_fix_high</span></div>
 </div>
 </div>
@@ -259,8 +265,8 @@
 <div class="absolute inset-0 fog-overlay opacity-20"></div>
 <div class="max-w-7xl mx-auto px-6 relative z-10">
 <div class="text-center mb-16">
-<h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-8 tracking-widest uppercase">Our Facilities</h2>
-<p class="text-gray-400 text-xl md:text-2xl font-serif-noir italic max-w-3xl mx-auto">Immerse yourself in our specially designed Jubensha rooms</p>
+<h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-8 tracking-widest uppercase" data-translate="jubenshaFacilities">Our Facilities</h2>
+<p class="text-gray-400 text-xl md:text-2xl font-serif-noir italic max-w-3xl mx-auto" data-translate="facilitiesDesc">Immerse yourself in our specially designed Jubensha rooms</p>
 </div>
 <div class="grid md:grid-cols-2 gap-12">
 <div class="glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-all duration-500">
@@ -268,24 +274,24 @@
 <img alt="Jubensha Room 1" class="w-full h-64 object-cover low-key-image group-hover:scale-105 transition-transform duration-700" src="../assets/images/Rooms/Jubensha_Room1.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 </div>
-<h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4">Mystery Chamber</h3>
+<h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4" data-translate="mysteryChamber">Mystery Chamber</h3>
 <div class="flex items-center gap-4 mb-4">
 <span class="material-symbols-outlined text-blood-crimson">group</span>
-<span class="text-gray-400">Capacity: 4-6 Players</span>
+<span class="text-gray-400" data-translate="mysteryCapacity">Capacity: 4-6 Players</span>
 </div>
-<p class="text-gray-400 font-serif-noir italic">An intimate setting perfect for classic detective mysteries and psychological thrillers. Dark wood furnishings and vintage decor create the perfect atmosphere for unraveling secrets.</p>
+<p class="text-gray-400 font-serif-noir italic" data-translate="mysteryChamberDesc">An intimate setting perfect for classic detective mysteries and psychological thrillers. Dark wood furnishings and vintage decor create the perfect atmosphere for unraveling secrets.</p>
 </div>
 <div class="glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-all duration-500">
 <div class="relative overflow-hidden rounded-xl mb-6">
 <img alt="Jubensha Room 2" class="w-full h-64 object-cover low-key-image group-hover:scale-105 transition-transform duration-700" src="../assets/images/Rooms/Jubensha_Room2.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 </div>
-<h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4">Grand Investigation Hall</h3>
+<h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4" data-translate="grandHall">Grand Investigation Hall</h3>
 <div class="flex items-center gap-4 mb-4">
 <span class="material-symbols-outlined text-blood-crimson">group</span>
-<span class="text-gray-400">Capacity: 6-8 Players</span>
+<span class="text-gray-400" data-translate="grandCapacity">Capacity: 6-8 Players</span>
 </div>
-<p class="text-gray-400 font-serif-noir italic">A spacious room designed for larger groups and complex storylines. Features multiple seating areas and atmospheric lighting perfect for epic historical dramas and supernatural mysteries where shadows whisper secrets and every corner holds dread.</p>
+<p class="text-gray-400 font-serif-noir italic" data-translate="grandHallDesc">A spacious room designed for larger groups and complex storylines. Features multiple seating areas and atmospheric lighting perfect for epic historical dramas and supernatural mysteries where shadows whisper secrets and every corner holds dread.</p>
 </div>
 </div>
 </div>
@@ -294,8 +300,8 @@
 <div class="absolute inset-0 fog-overlay opacity-20"></div>
 <div class="max-w-7xl mx-auto px-6 relative z-10">
 <div class="text-center mb-16">
-<h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-8 tracking-widest uppercase">Legends in the Making</h2>
-<p class="text-gray-400 text-xl font-serif-noir italic">Witness the tales of those who dared to uncover the truth</p>
+<h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-8 tracking-widest uppercase" data-translate="jubenshaLegends">Legends in the Making</h2>
+<p class="text-gray-400 text-xl font-serif-noir italic" data-translate="legendsDesc">Witness the tales of those who dared to uncover the truth</p>
 </div>
 <div class="slideshow-container relative w-full h-[600px] md:h-[700px] rounded-2xl overflow-hidden border border-tarnished-gold/20">
 <div class="slide-jubensha active absolute inset-0 opacity-100 transition-opacity duration-1000 ease-in-out">
@@ -333,9 +339,9 @@
 <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blood-crimson/20 via-transparent to-transparent"></div>
 <div class="absolute inset-0 fog-overlay opacity-30"></div>
 <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-<h2 class="text-5xl md:text-7xl font-serif-noir font-black text-white mb-8 tracking-widest uppercase">Sign Your Destiny</h2>
-<p class="text-tarnished-gold/80 text-xl md:text-2xl mb-12 font-serif-noir italic max-w-2xl mx-auto">The script is written. Your seat at the table is cold. Will you answer the call?</p>
-<button class="bg-blood-crimson hover:bg-[#a00000] text-white px-20 py-8 rounded-full font-serif-noir font-black text-3xl transition-all duration-300 wax-seal hover:-translate-y-2 active:scale-95 uppercase tracking-widest">
+<h2 class="text-5xl md:text-7xl font-serif-noir font-black text-white mb-8 tracking-widest uppercase" data-translate="signDestiny">Sign Your Destiny</h2>
+<p class="text-tarnished-gold/80 text-xl md:text-2xl mb-12 font-serif-noir italic max-w-2xl mx-auto" data-translate="destinyDesc">The script is written. Your seat at the table is cold. Will you answer the call?</p>
+<button class="bg-blood-crimson hover:bg-[#a00000] text-white px-20 py-8 rounded-full font-serif-noir font-black text-3xl transition-all duration-300 wax-seal hover:-translate-y-2 active:scale-95 uppercase tracking-widest" data-translate="jubenshaBook">
             Book Now
         </button>
 </div>
@@ -356,7 +362,7 @@
 </div>
 <span class="text-2xl font-black text-white tracking-tighter uppercase font-serif-noir"><span class="text-tarnished-gold">Antz</span><span class="text-blood-crimson">Jubensha</span></span>
 </div>
-<p class="text-gray-600 text-sm font-medium mt-2 font-serif-noir italic">Curators of fine mystery and darkness in Miri.</p>
+<p class="text-gray-600 text-sm font-medium mt-2 font-serif-noir italic" data-translate="curatorsText">Curators of fine mystery and darkness in Miri.</p>
 </div>
 <div class="flex flex-col items-center md:items-end gap-6">
 <div class="flex gap-4">
@@ -371,13 +377,14 @@
 </svg>
 </a>
 </div>
-<p class="text-gray-700 text-xs tracking-widest uppercase font-serif-noir">© 2017 AntzBoardgame. The truth is out there.</p>
-<p class="text-gray-700 text-xs tracking-widest uppercase font-serif-noir">© 2025 AntzJubensha. Where secrets die and mysteries come alive.</p>
+<p class="text-gray-700 text-xs tracking-widest uppercase font-serif-noir" data-translate="truthText">© 2017 AntzBoardgame. The truth is out there.</p>
+<p class="text-gray-700 text-xs tracking-widest uppercase font-serif-noir" data-translate="mysteriesText">© 2025 AntzJubensha. Where secrets die and mysteries come alive.</p>
 </div>
 </div>
 </div>
 </footer>
 
+<script src="../assets/js/language.js"></script>
 <script>
 // Jubensha slideshow functionality
 let currentJubenshaSlide = 0;
@@ -408,6 +415,18 @@ if (mobileMenuButton && mobileMenu) {
         mobileMenu.classList.toggle('hidden');
     });
 }
+
+// Desktop language toggle
+document.addEventListener('DOMContentLoaded', function() {
+    const desktopToggle = document.getElementById('language-toggle-desktop');
+    const desktopMenu = document.getElementById('language-menu-desktop');
+    
+    if (desktopToggle && desktopMenu) {
+        desktopToggle.addEventListener('click', function() {
+            desktopMenu.classList.toggle('hidden');
+        });
+    }
+});
 </script>
 
 </body></html>

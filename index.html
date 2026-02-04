@@ -108,13 +108,19 @@
 <span class="text-xl font-heading font-bold tracking-tight text-white"><span class="text-primary">Antz</span><span class="text-primary">Boardgame</span></span>
 </div>
 <div class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wide text-white/90">
-<a class="nav-link text-primary" href="/">Home</a>
-<a class="nav-link" href="/jubensha/">Jubensha</a>
-<a class="nav-link" href="/boardgame/">Boardgame</a>
-<a class="nav-link" href="/about/">About Us</a>
-<a class="nav-link" href="/contact/">Contact Us</a>
+<a class="nav-link text-primary" href="/" data-translate="home">Home</a>
+<a class="nav-link" href="/jubensha/" data-translate="jubensha">Jubensha</a>
+<a class="nav-link" href="/boardgame/" data-translate="boardgame">Boardgame</a>
+<a class="nav-link" href="/about/" data-translate="about">About Us</a>
+<a class="nav-link" href="/contact/" data-translate="contact">Contact Us</a>
 </div>
 <div class="flex items-center space-x-4">
+<div class="language-selector">
+<button id="language-toggle" onclick="toggleLanguage()" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/40 transition-all hover:scale-105">
+<span class="material-icons-outlined text-primary">language</span>
+<span id="current-lang" class="text-primary font-bold">EN</span>
+</button>
+</div>
 <button id="mobile-menu-button" class="md:hidden p-2 rounded-full text-white">
 <span class="material-icons-outlined text-3xl">menu</span>
 </button>
@@ -123,11 +129,11 @@
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="hidden md:hidden bg-background-dark/95 backdrop-blur-lg border-t border-white/10">
 <div class="px-6 py-4 space-y-4">
-<a class="block text-white hover:text-primary transition-colors" href="/">Home</a>
-<a class="block text-white hover:text-primary transition-colors" href="/jubensha/">Jubensha</a>
-<a class="block text-white hover:text-primary transition-colors" href="/boardgame/">Boardgame</a>
-<a class="block text-white hover:text-primary transition-colors" href="/about/">About Us</a>
-<a class="block text-white hover:text-primary transition-colors" href="/contact/">Contact Us</a>
+<a class="block text-white hover:text-primary transition-colors" href="/" data-translate="home">Home</a>
+<a class="block text-white hover:text-primary transition-colors" href="/jubensha/" data-translate="jubensha">Jubensha</a>
+<a class="block text-white hover:text-primary transition-colors" href="/boardgame/" data-translate="boardgame">Boardgame</a>
+<a class="block text-white hover:text-primary transition-colors" href="/about/" data-translate="about">About Us</a>
+<a class="block text-white hover:text-primary transition-colors" href="/contact/" data-translate="contact">Contact Us</a>
 </div>
 </div>
 </nav>
@@ -155,28 +161,28 @@
 <h1 class="text-5xl md:text-8xl font-heading font-extrabold text-white mb-6 tracking-tight drop-shadow-lg">
                 <span class="text-primary">Antz</span><span class="text-primary">Boardgame</span>
 </h1>
-<p class="text-xl md:text-2xl text-stone-200 font-light mb-12 max-w-2xl mx-auto tracking-wide">
+<p class="text-xl md:text-2xl text-stone-200 font-light mb-12 max-w-2xl mx-auto tracking-wide" data-translate="heroSubtitle">
                 Where Games Come Alive in Miri!
             </p>
 <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
 <a href="/contact/" class="group relative px-10 py-5 bg-gradient-to-r from-secondary to-orange-500 rounded-full text-white font-bold text-lg shadow-xl hover:shadow-secondary/30 hover:-translate-y-1 transition-all duration-300 inline-block">
-<span class="relative flex items-center">
+<span class="relative flex items-center" data-translate="bookSession">
                         Book Your Session
                         <span class="material-icons-outlined ml-2 group-hover:translate-x-1 transition-transform">calendar_month</span>
 </span>
 </a>
-<button class="px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white font-bold text-lg transition-all duration-300">
+<button class="px-10 py-5 bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 rounded-full text-white font-bold text-lg transition-all duration-300" data-translate="browseGames">
                     Browse Games
                 </button>
 </div>
 <div class="mt-20 grid grid-cols-2 gap-8 md:gap-16 border-t border-white/10 pt-10">
 <div class="text-center">
 <div class="text-3xl font-bold text-primary">353+</div>
-<div class="text-xs uppercase tracking-widest text-stone-300 font-medium">Boardgames</div>
+<div class="text-xs uppercase tracking-widest text-stone-300 font-medium" data-translate="boardgamesCount">Boardgames</div>
 </div>
 <div class="text-center">
 <div class="text-3xl font-bold text-primary">119+</div>
-<div class="text-xs uppercase tracking-widest text-stone-300 font-medium">Jubensha</div>
+<div class="text-xs uppercase tracking-widest text-stone-300 font-medium" data-translate="jubenshaCount">Jubensha</div>
 </div>
 </div>
 </div>
@@ -188,9 +194,9 @@
 <div class="max-w-7xl mx-auto">
 <div class="grid md:grid-cols-2 gap-16 items-center">
 <div>
-<span class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block">Our Story</span>
-<h2 class="text-4xl font-heading font-bold mb-6 text-zinc-900 dark:text-white">Experience Miri's Premium Tabletop Hub</h2>
-<p class="text-lg text-stone-600 dark:text-stone-400 mb-8 leading-relaxed">
+<span class="text-primary font-bold uppercase tracking-[0.2em] text-sm mb-4 block" data-translate="ourStory">Our Story</span>
+<h2 class="text-4xl font-heading font-bold mb-6 text-zinc-900 dark:text-white" data-translate="experienceTitle">Experience Miri's Premium Tabletop Hub</h2>
+<p class="text-lg text-stone-600 dark:text-stone-400 mb-8 leading-relaxed" data-translate="experienceText">
                         At AntzBoardgame, we believe in the power of social interaction through play. Whether you're a hardcore strategist, a casual player, or a fan of immersive "Jubensha" roleplay, we provide the perfect sanctuary for your gaming adventures.
                     </p>
 <div class="flex items-start space-x-4">
@@ -198,8 +204,8 @@
 <span class="material-icons-outlined">groups</span>
 </div>
 <div>
-<h4 class="font-bold text-zinc-900 dark:text-white">Community Driven</h4>
-<p class="text-sm text-stone-500">Regular tournaments and community game nights.</p>
+<h4 class="font-bold text-zinc-900 dark:text-white" data-translate="communityDriven">Community Driven</h4>
+<p class="text-sm text-stone-500" data-translate="communityText">Regular tournaments and community game nights.</p>
 </div>
 </div>
 </div>
@@ -228,22 +234,22 @@
 <h3 class="text-xl font-heading font-bold tracking-tight">
 <span class="text-primary">Antz</span><span class="text-primary">Boardgame</span>
 </h3>
-<p class="text-sm text-stone-400 mt-1">
+<p class="text-sm text-stone-400 mt-1" data-translate="footerText">
 Miri's Premier Gaming Hub
 </p>
 </div>
 </div>
-<p class="text-sm text-stone-400 text-center md:text-left">
+<p class="text-sm text-stone-400 text-center md:text-left" data-translate="copyright">
 © 2017 AntzBoardgame. All rights reserved. | Miri, Sarawak
 </p>
 </div>
 <div class="flex space-x-6">
-<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<a class="text-stone-400 hover:text-primary transition-colors" href="https://www.facebook.com/profile.php?id=61569104278113">
 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
 </svg>
 </a>
-<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<a class="text-stone-400 hover:text-primary transition-colors" href="https://www.instagram.com/antz.boardgame/">
 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
 </svg>
@@ -258,6 +264,7 @@ Miri's Premier Gaming Hub
 </div>
 </footer>
 
+<script src="assets/js/language.js"></script>
 <script>
 // Slideshow functionality
 let currentSlide = 0;

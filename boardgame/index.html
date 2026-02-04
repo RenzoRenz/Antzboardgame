@@ -91,13 +91,19 @@
 <span class="text-xl font-heading font-bold tracking-tight text-white"><span class="text-primary">Antz</span><span class="text-primary">Boardgame</span></span>
 </div>
 <div class="hidden md:flex items-center space-x-10 text-sm font-medium tracking-wide text-white/90">
-<a class="nav-link" href="/">Home</a>
-<a class="nav-link" href="/jubensha/">Jubensha</a>
-<a class="nav-link text-primary" href="/boardgame/">Boardgame</a>
-<a class="nav-link" href="/about/">About Us</a>
-<a class="nav-link" href="/contact/">Contact Us</a>
+<a class="nav-link" href="/" data-translate="home">Home</a>
+<a class="nav-link" href="/jubensha/" data-translate="jubensha">Jubensha</a>
+<a class="nav-link text-primary" href="/boardgame/" data-translate="boardgame">Boardgame</a>
+<a class="nav-link" href="/about/" data-translate="about">About Us</a>
+<a class="nav-link" href="/contact/" data-translate="contact">Contact Us</a>
 </div>
 <div class="flex items-center space-x-4">
+<div class="language-selector">
+<button id="language-toggle" onclick="toggleLanguage()" class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-primary/20 hover:bg-primary/30 border border-primary/40 transition-all hover:scale-105">
+<span class="material-symbols-outlined text-primary">language</span>
+<span id="current-lang" class="text-primary font-bold">EN</span>
+</button>
+</div>
 <button id="mobile-menu-button" class="md:hidden p-2 rounded-full text-white">
 <span class="material-icons-outlined text-3xl">menu</span>
 </button>
@@ -117,67 +123,67 @@
 <main class="max-w-[1440px] mx-auto px-6 lg:px-12 py-8 flex gap-8">
 <aside class="w-72 hidden lg:flex flex-col gap-6 shrink-0">
 <div class="flex flex-col gap-1">
-<h2 class="text-lg font-bold text-primary">Filters</h2>
-<p class="text-slate-400 text-sm">Refine your collection</p>
+<h2 class="text-lg font-bold text-primary" data-translate="filters">Filters</h2>
+<p class="text-slate-400 text-sm" data-translate="refineCollection">Refine your collection</p>
 </div>
 <div class="flex flex-col gap-4">
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/60">search</span>
-<input class="w-full pl-10 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none placeholder:text-slate-500 transition-all" placeholder="Search games..."/>
+<input class="w-full pl-10 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none placeholder:text-slate-500 transition-all" placeholder="Search games..." data-translate="searchGames"/>
 </div>
 <div class="flex flex-col gap-3">
 <details class="group glass-card rounded-xl overflow-hidden border-primary/5" open="">
 <summary class="flex cursor-pointer items-center justify-between p-4 list-none">
 <span class="text-sm font-semibold flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-xl">category</span> Category
+<span class="material-symbols-outlined text-primary text-xl">category</span> <span data-translate="category">Category</span>
                         </span>
 <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="px-4 pb-4 flex flex-col gap-2">
 <label class="flex items-center gap-3 cursor-pointer group/label">
 <input checked="" class="rounded border-white/20 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
-<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors">Strategy</span>
+<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors" data-translate="strategy">Strategy</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group/label">
 <input class="rounded border-white/20 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
-<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors">Party Games</span>
+<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors" data-translate="partyGames">Party Games</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group/label">
 <input class="rounded border-white/20 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
-<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors">Family</span>
+<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors" data-translate="family">Family</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group/label">
 <input class="rounded border-white/20 bg-transparent text-primary focus:ring-primary" type="checkbox"/>
-<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors">Card Games</span>
+<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors" data-translate="cardGames">Card Games</span>
 </label>
 </div>
 </details>
 <details class="group glass-card rounded-xl overflow-hidden border-primary/5" open="">
 <summary class="flex cursor-pointer items-center justify-between p-4 list-none">
 <span class="text-sm font-semibold flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-xl">speed</span> Difficulty
+<span class="material-symbols-outlined text-primary text-xl">speed</span> <span data-translate="difficulty">Difficulty</span>
                         </span>
 <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
 <div class="px-4 pb-4 flex flex-col gap-2">
 <label class="flex items-center gap-3 cursor-pointer group/label">
 <input class="border-white/20 bg-transparent text-primary focus:ring-primary" name="difficulty" type="radio"/>
-<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors">Beginner</span>
+<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors" data-translate="beginner">Beginner</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group/label">
 <input class="border-white/20 bg-transparent text-primary focus:ring-primary" name="difficulty" type="radio"/>
-<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors">Intermediate</span>
+<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors" data-translate="intermediate">Intermediate</span>
 </label>
 <label class="flex items-center gap-3 cursor-pointer group/label">
 <input class="border-white/20 bg-transparent text-primary focus:ring-primary" name="difficulty" type="radio"/>
-<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors">Advanced</span>
+<span class="text-sm text-slate-400 group-hover/label:text-white transition-colors" data-translate="advanced">Advanced</span>
 </label>
 </div>
 </details>
 <details class="group glass-card rounded-xl overflow-hidden border-primary/5" open="">
 <summary class="flex cursor-pointer items-center justify-between p-4 list-none">
 <span class="text-sm font-semibold flex items-center gap-2">
-<span class="material-symbols-outlined text-primary text-xl">group</span> Players
+<span class="material-symbols-outlined text-primary text-xl">group</span> <span data-translate="players">Players</span>
                         </span>
 <span class="material-symbols-outlined text-sm transition-transform group-open:rotate-180">expand_more</span>
 </summary>
@@ -190,7 +196,7 @@
 </details>
 </div>
 </div>
-<button class="mt-4 w-full py-3 rounded-lg border border-primary/30 text-primary text-sm font-bold hover:bg-primary/10 transition-colors">
+<button class="mt-4 w-full py-3 rounded-lg border border-primary/30 text-primary text-sm font-bold hover:bg-primary/10 transition-colors" data-translate="resetFilters">
             Reset All Filters
         </button>
 </aside>
@@ -199,12 +205,12 @@
 <div class="text-8xl mb-6">
 🚧
 </div>
-<h1 class="text-4xl font-bold text-primary mb-4">Under Construction</h1>
-<p class="text-lg text-slate-400 max-w-md mx-auto">
+<h1 class="text-4xl font-bold text-primary mb-4" data-translate="boardgameTitle">Under Construction</h1>
+<p class="text-lg text-slate-400 max-w-md mx-auto" data-translate="boardgameText">
 We're working hard to bring you our complete boardgame collection. Check back soon!
 </p>
 <div class="flex justify-center mt-8">
-<a href="/" class="bg-primary text-background-dark px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform">
+<a href="/" class="bg-primary text-background-dark px-6 py-3 rounded-lg font-bold hover:scale-105 transition-transform" data-translate="backHome">
 Back to Home
 </a>
 </div>
@@ -223,22 +229,22 @@ Back to Home
 <h3 class="text-xl font-heading font-bold tracking-tight">
 <span class="text-primary">Antz</span><span class="text-primary">Boardgame</span>
 </h3>
-<p class="text-sm text-stone-400 mt-1">
+<p class="text-sm text-stone-400 mt-1" data-translate="footerText">
 Miri's Premier Gaming Hub
 </p>
 </div>
 </div>
-<p class="text-sm text-stone-400 text-center md:text-left">
+<p class="text-sm text-stone-400 text-center md:text-left" data-translate="copyright">
 © 2017 AntzBoardgame. All rights reserved. | Miri, Sarawak
 </p>
 </div>
 <div class="flex space-x-6">
-<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<a class="text-stone-400 hover:text-primary transition-colors" href="https://www.facebook.com/profile.php?id=61569104278113">
 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
 </svg>
 </a>
-<a class="text-stone-400 hover:text-primary transition-colors" href="#">
+<a class="text-stone-400 hover:text-primary transition-colors" href="https://www.instagram.com/antz.boardgame/">
 <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
 </svg>
@@ -253,6 +259,7 @@ Miri's Premier Gaming Hub
 </div>
 </footer>
 
+<script src="../assets/js/language.js"></script>
 <script>
 // Mobile menu functionality
 const mobileMenuButton = document.getElementById('mobile-menu-button');
@@ -263,6 +270,55 @@ if (mobileMenuButton && mobileMenu) {
         mobileMenu.classList.toggle('hidden');
     });
 }
+
+// Filter functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Player count filter buttons - select by parent container
+    const playerButtonsContainer = document.querySelector('details:last-of-type .px-4.pb-4');
+    const playerButtons = playerButtonsContainer ? playerButtonsContainer.querySelectorAll('button') : [];
+    
+    playerButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active state from all buttons
+            playerButtons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-background-dark', 'font-bold');
+                btn.classList.add('bg-white/5', 'border', 'border-white/10', 'text-slate-400', 'hover:text-white');
+            });
+            
+            // Add active state to clicked button
+            this.classList.remove('bg-white/5', 'border', 'border-white/10', 'text-slate-400', 'hover:text-white');
+            this.classList.add('bg-primary', 'text-background-dark', 'font-bold');
+        });
+    });
+    
+    // Reset filters button
+    const resetButton = document.querySelector('[data-translate="resetFilters"]');
+    if (resetButton) {
+        resetButton.addEventListener('click', function() {
+            // Reset all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            
+            // Reset all radio buttons
+            document.querySelectorAll('input[type="radio"]').forEach(radio => {
+                radio.checked = false;
+            });
+            
+            // Reset player count buttons
+            playerButtons.forEach(btn => {
+                btn.classList.remove('bg-primary', 'text-background-dark', 'font-bold');
+                btn.classList.add('bg-white/5', 'border', 'border-white/10', 'text-slate-400', 'hover:text-white');
+            });
+            
+            // Reset search input
+            const searchInput = document.querySelector('input[placeholder*="Search"]');
+            if (searchInput) {
+                searchInput.value = '';
+            }
+        });
+    }
+});
 </script>
 
 </body></html>
