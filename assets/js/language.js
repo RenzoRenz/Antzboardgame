@@ -101,7 +101,73 @@ const translations = {
         jubenshaBook: 'Book Now',
         curatorsText: 'Curators of fine mystery and darkness in Miri.',
         truthText: '© 2017 AntzBoardgame. The truth is out there.',
-        mysteriesText: '© 2025 AntzJubensha. Where secrets die and mysteries come alive.'
+        mysteriesText: '© 2025 AntzJubensha. Where secrets die and mysteries come alive.',
+        
+        // Privacy Policy
+        privacyTitle: 'Privacy Policy',
+        lastUpdated: 'Last Updated: January 2025',
+        privacySection1Title: '1. Information We Collect',
+        privacySection1Intro: 'When you book a session or contact us, we may collect:',
+        privacySection1Item1: 'Name and contact information (phone number, email)',
+        privacySection1Item2: 'Booking details and preferences',
+        privacySection1Item3: 'Payment information (processed securely through third-party providers)',
+        privacySection2Title: '2. How We Use Your Information',
+        privacySection2Intro: 'We use your information to:',
+        privacySection2Item1: 'Process and confirm your bookings',
+        privacySection2Item2: 'Communicate with you about your reservations',
+        privacySection2Item3: 'Send promotional offers (with your consent)',
+        privacySection2Item4: 'Improve our services and customer experience',
+        privacySection3Title: '3. Data Protection',
+        privacySection3Text: 'We implement appropriate security measures to protect your personal information. Your data is stored securely and accessed only by authorized personnel.',
+        privacySection4Title: '4. Third-Party Services',
+        privacySection4Text: 'We may use third-party services (WhatsApp, payment processors) that have their own privacy policies. We encourage you to review their policies.',
+        privacySection5Title: '5. Your Rights',
+        privacySection5Intro: 'You have the right to:',
+        privacySection5Item1: 'Access your personal data',
+        privacySection5Item2: 'Request correction of inaccurate data',
+        privacySection5Item3: 'Request deletion of your data',
+        privacySection5Item4: 'Opt-out of marketing communications',
+        privacySection6Title: '6. Contact Us',
+        privacySection6Text: 'For privacy concerns or data requests, contact us via WhatsApp at',
+        
+        // Terms & Conditions
+        termsTitle: 'Terms & Conditions',
+        termsAcceptance: 'By accessing and using this website or visiting our premises, you accept and agree to be bound by these Terms and Conditions.',
+        termsSection1Title: '1. Booking & Reservations',
+        termsSection1Item1: 'Bookings must be made in advance via WhatsApp or in-person',
+        termsSection1Item2: 'Reservations are subject to availability',
+        termsSection1Item3: 'Group bookings (5+ people) should be made at least 48 hours in advance',
+        termsSection1Item4: 'Special arrangements can be made for large groups or events',
+        termsSection1Item5: 'Please notify us if you need to cancel or reschedule',
+        termsSection1Item6: 'Cancellations can be made via WhatsApp',
+        termsSection1Item7: 'Minimum age requirements may apply for certain games',
+        termsSection1Item8: 'Parental supervision required for children under 12',
+        termsSection2Title: '2. Facility Usage',
+        termsSection2Item1: 'All games and equipment must be handled with care',
+        termsSection2Item2: 'Damaged or lost game components must be reported immediately',
+        termsSection2Item3: 'Food and drinks are allowed but must be kept away from game materials',
+        termsSection2Item4: 'Customers are responsible for any damage caused to games or facilities',
+        termsSection3Title: '3. Conduct & Behavior',
+        termsSection3Item1: 'Respectful behavior towards staff and other customers is required',
+        termsSection3Item2: 'Disruptive behavior may result in removal without refund',
+        termsSection3Item3: 'Smoking and vaping are prohibited inside the premises',
+        termsSection3Item4: 'Children under 12 must be accompanied by an adult',
+        termsSection4Title: '4. Payment Terms',
+        termsSection4Item1: 'Payment is required before or at the start of your session',
+        termsSection4Item2: 'We accept cash and electronic payments',
+        termsSection4Item3: 'Prices are subject to change without prior notice',
+        termsSection4Item4: 'No refunds for early departure or unused time',
+        termsSection5Title: '5. Liability',
+        termsSection5Intro: 'AntzBoardgame is not liable for:',
+        termsSection5Item1: 'Personal belongings lost, stolen, or damaged on premises',
+        termsSection5Item2: 'Personal injuries unless caused by our negligence',
+        termsSection5Item3: 'Disputes between customers',
+        termsSection6Title: '6. Photography & Media',
+        termsSection6Text: 'By visiting our premises, you consent to being photographed or recorded for promotional purposes. Please inform staff if you prefer not to be included.',
+        termsSection7Title: '7. Changes to Terms',
+        termsSection7Text: 'We reserve the right to modify these terms at any time. Continued use of our services constitutes acceptance of updated terms.',
+        termsSection8Title: '8. Contact',
+        termsSection8Text: 'For questions about these terms, contact us via WhatsApp at'
     },
     zh: {
         // Navigation
@@ -202,7 +268,73 @@ const translations = {
         jubenshaBook: '立即预约',
         curatorsText: '美里精美神秘和黑暗的策展人。',
         truthText: '© 2017 Antz桌游。真相就在那里。',
-        mysteriesText: '© 2025 Antz剧本杀。秘密死去，谜团重生。'
+        mysteriesText: '© 2025 Antz剧本杀。秘密死去，谜团重生。',
+        
+        // Privacy Policy
+        privacyTitle: '隐私政策',
+        lastUpdated: '最后更新：2025年1月',
+        privacySection1Title: '1. 我们收集的信息',
+        privacySection1Intro: '当您预订或联系我们时，我们可能会收集：',
+        privacySection1Item1: '姓名和联系信息（电话号码、电子邮件）',
+        privacySection1Item2: '预订详情和偏好',
+        privacySection1Item3: '付款信息（通过第三方提供商安全处理）',
+        privacySection2Title: '2. 我们如何使用您的信息',
+        privacySection2Intro: '我们使用您的信息来：',
+        privacySection2Item1: '处理和确认您的预订',
+        privacySection2Item2: '与您沟通有关您的预订',
+        privacySection2Item3: '发送促销优惠（经您同意）',
+        privacySection2Item4: '改善我们的服务和客户体验',
+        privacySection3Title: '3. 数据保护',
+        privacySection3Text: '我们实施适当的安全措施来保护您的个人信息。您的数据安全存储，仅由授权人员访问。',
+        privacySection4Title: '4. 第三方服务',
+        privacySection4Text: '我们可能使用具有自己隐私政策的第三方服务（WhatsApp、支付处理器）。我们鼓励您查看他们的政策。',
+        privacySection5Title: '5. 您的权利',
+        privacySection5Intro: '您有权：',
+        privacySection5Item1: '访问您的个人数据',
+        privacySection5Item2: '请求更正不准确的数据',
+        privacySection5Item3: '请求删除您的数据',
+        privacySection5Item4: '选择退出营销通讯',
+        privacySection6Title: '6. 联系我们',
+        privacySection6Text: '如有隐私问题或数据请求，请通过WhatsApp联系我们：',
+        
+        // Terms & Conditions
+        termsTitle: '条款与条件',
+        termsAcceptance: '通过访问和使用本网站或访问我们的场所，您接受并同意受这些条款和条件的约束。',
+        termsSection1Title: '1. 预订与预约',
+        termsSection1Item1: '必须通过WhatsApp或现场提前预订',
+        termsSection1Item2: '预订视供应情况而定',
+        termsSection1Item3: '团体预订（5人以上）应至少提前48小时预订',
+        termsSection1Item4: '可为大型团体或活动做出特殊安排',
+        termsSection1Item5: '如需取消或重新安排，请通知我们',
+        termsSection1Item6: '可通过WhatsApp取消预订',
+        termsSection1Item7: '某些游戏可能有最低年龄要求',
+        termsSection1Item8: '12岁以下儿童需要家长监督',
+        termsSection2Title: '2. 设施使用',
+        termsSection2Item1: '所有游戏和设备必须小心处理',
+        termsSection2Item2: '损坏或丢失的游戏组件必须立即报告',
+        termsSection2Item3: '允许食物和饮料，但必须远离游戏材料',
+        termsSection2Item4: '客户对游戏或设施造成的任何损坏负责',
+        termsSection3Title: '3. 行为规范',
+        termsSection3Item1: '需要对员工和其他客户保持尊重',
+        termsSection3Item2: '破坏性行为可能导致被驱逐且不退款',
+        termsSection3Item3: '场所内禁止吸烟和电子烟',
+        termsSection3Item4: '12岁以下儿童必须由成人陪同',
+        termsSection4Title: '4. 付款条款',
+        termsSection4Item1: '需要在游戏开始前或开始时付款',
+        termsSection4Item2: '我们接受现金和电子支付',
+        termsSection4Item3: '价格可能会在不事先通知的情况下更改',
+        termsSection4Item4: '提前离开或未使用的时间不予退款',
+        termsSection5Title: '5. 责任',
+        termsSection5Intro: 'Antz桌游不对以下情况负责：',
+        termsSection5Item1: '在场所内丢失、被盗或损坏的个人物品',
+        termsSection5Item2: '除非由我们的疏忽造成的人身伤害',
+        termsSection5Item3: '客户之间的纠纷',
+        termsSection6Title: '6. 摄影与媒体',
+        termsSection6Text: '访问我们的场所即表示您同意被拍摄或录制用于宣传目的。如果您不希望被包括在内，请告知工作人员。',
+        termsSection7Title: '7. 条款变更',
+        termsSection7Text: '我们保留随时修改这些条款的权利。继续使用我们的服务即表示接受更新的条款。',
+        termsSection8Title: '8. 联系方式',
+        termsSection8Text: '如有关于这些条款的问题，请通过WhatsApp联系我们：'
     }
 };
 
@@ -239,6 +371,14 @@ function updatePageLanguage() {
                 element.innerHTML = 'Bringing People Together in <span class="text-primary italic">Miri</span>';
             } else if (key === 'contactTitle' && currentLanguage === 'en') {
                 element.innerHTML = 'Get in <span class="text-primary italic">Touch</span>';
+            } else if (key === 'privacyTitle' && currentLanguage === 'zh') {
+                element.innerHTML = '隐私<span class="text-primary italic">政策</span>';
+            } else if (key === 'privacyTitle' && currentLanguage === 'en') {
+                element.innerHTML = 'Privacy <span class="text-primary italic">Policy</span>';
+            } else if (key === 'termsTitle' && currentLanguage === 'zh') {
+                element.innerHTML = '条款与<span class="text-primary italic">条件</span>';
+            } else if (key === 'termsTitle' && currentLanguage === 'en') {
+                element.innerHTML = 'Terms & <span class="text-primary italic">Conditions</span>';
             } else {
                 element.textContent = t[key];
             }
