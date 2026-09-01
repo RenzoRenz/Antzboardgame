@@ -80,9 +80,29 @@
         .nav-link:hover::after {
             width: 100%;
         }
+        html, body { max-width: 100%; overflow-x: hidden; }
+        .bottom-nav {
+            position: fixed; bottom: 0; left: 0; right: 0; width: 100%; z-index: 9999;
+            display: flex; flex-wrap: nowrap; justify-content: space-around; align-items: center;
+            padding: 8px 4px calc(8px + env(safe-area-inset-bottom));
+            border-top: 1px solid rgba(255,255,255,0.1);
+            background-color: rgba(26,18,11,0.97);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            transform: translateZ(0);
+        }
+        .bottom-nav a {
+            flex: 1 1 0; min-width: 0; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; text-decoration: none;
+            color: rgba(255,255,255,0.5); transition: transform 0.15s, color 0.15s;
+        }
+        .bottom-nav a:active { transform: scale(0.9); }
+        .bottom-nav a:hover, .bottom-nav a.active { color: #D4AF37; }
+        .bottom-nav .nav-icon { font-size: 22px; line-height: 1; }
+        .bottom-nav .nav-label { font-size: 10px; font-weight: 500; margin-top: 2px; white-space: nowrap; }
+        @media (min-width: 1024px) { .bottom-nav { display: none; } }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen pb-20 lg:pb-0 overflow-x-hidden">
 
 <header class="fixed top-0 left-0 right-0 z-50 glass-header">
 <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
@@ -4713,6 +4733,30 @@ function sortGames(order) {
   cards.forEach(c => grid.appendChild(c));
 }
 </script>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="bottom-nav">
+<a href="/">
+<span class="material-symbols-outlined nav-icon">home</span>
+<span class="nav-label" data-translate="home">Home</span>
+</a>
+<a href="/jubensha/">
+<span class="material-symbols-outlined nav-icon">theater_comedy</span>
+<span class="nav-label" data-translate="jubensha">Jubensha</span>
+</a>
+<a href="/boardgame/" class="active">
+<span class="material-symbols-outlined nav-icon">casino</span>
+<span class="nav-label" data-translate="boardgame">Boardgame</span>
+</a>
+<a href="/about/">
+<span class="material-symbols-outlined nav-icon">groups</span>
+<span class="nav-label" data-translate="about">About</span>
+</a>
+<a href="/contact/">
+<span class="material-symbols-outlined nav-icon">call</span>
+<span class="nav-label" data-translate="contact">Contact</span>
+</a>
+</nav>
 
 </body></html>
 

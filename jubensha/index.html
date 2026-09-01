@@ -126,8 +126,47 @@
             }
         }
     </style>
+<style>
+    /* Mobile bottom navigation - plain CSS so it never depends on Tailwind CDN class generation */
+    .bottom-nav {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-around;
+        align-items: center;
+        padding: 8px 4px calc(8px + env(safe-area-inset-bottom));
+        border-top: 1px solid rgba(197, 160, 89, 0.2);
+        background-color: rgba(5, 5, 5, 0.97);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        transform: translateZ(0);
+    }
+    .bottom-nav a {
+        flex: 1 1 0;
+        min-width: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        color: rgba(197, 160, 89, 0.6);
+        transition: transform 0.15s ease, color 0.15s ease;
+    }
+    .bottom-nav a:active { transform: scale(0.9); }
+    .bottom-nav a:hover { color: #8B0000; }
+    .bottom-nav a.active { color: #8B0000; }
+    .bottom-nav .nav-icon { font-size: 22px; line-height: 1; }
+    .bottom-nav .nav-label { font-size: 10px; font-weight: 500; margin-top: 2px; white-space: nowrap; }
+    @media (min-width: 1024px) {
+        .bottom-nav { display: none; }
+    }
+  </style>
 </head>
-<body class="bg-background-dark font-display text-gray-300 selection:bg-blood-crimson/30 overflow-x-hidden">
+<body class="bg-background-dark font-display text-gray-300 selection:bg-blood-crimson/30 overflow-x-hidden pb-20 lg:pb-0">
 <header class="fixed top-0 w-full z-[100] transition-all duration-500 nav-glass">
 <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
 <a class="flex items-center gap-3 group" href="/">
@@ -480,5 +519,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<!-- Mobile Bottom Navigation -->
+<nav class="bottom-nav">
+<a href="/">
+<span class="material-symbols-outlined nav-icon">home</span>
+<span class="nav-label" data-translate="home">Home</span>
+</a>
+<a href="/jubensha/" class="active">
+<span class="material-symbols-outlined nav-icon">theater_comedy</span>
+<span class="nav-label" data-translate="jubensha">Jubensha</span>
+</a>
+<a href="/boardgame/">
+<span class="material-symbols-outlined nav-icon">casino</span>
+<span class="nav-label" data-translate="boardgame">Boardgame</span>
+</a>
+<a href="/about/">
+<span class="material-symbols-outlined nav-icon">groups</span>
+<span class="nav-label" data-translate="about">About</span>
+</a>
+<a href="/contact/">
+<span class="material-symbols-outlined nav-icon">call</span>
+<span class="nav-label" data-translate="contact">Contact</span>
+</a>
+</nav>
 
 </body></html>
