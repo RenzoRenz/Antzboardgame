@@ -4,6 +4,7 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Boardgame Collection | AntzBoardgame</title>
 <meta property="og:title" content="Boardgame Collection | AntzBoardgame">
+<meta property="og:site_name" content="Antzboardgame & AntzJubensha">
 <meta property="og:description" content="Explore our collection of 353+ premium boardgames. From strategy to family games, find your perfect tabletop adventure in Miri.">
 <meta property="og:image" content="../assets/logos/logo.jpg">
 <meta property="og:url" content="https://antzboardgame.com/boardgame">
@@ -82,6 +83,7 @@
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-white min-h-screen">
+
 <header class="fixed top-0 left-0 right-0 z-50 glass-header">
 <div class="max-w-7xl mx-auto px-6 lg:px-12 h-20 flex items-center justify-between">
 <div class="flex items-center space-x-3">
@@ -120,13 +122,18 @@
 </div>
 </div>
 </header>
-<main class="max-w-[1440px] mx-auto px-6 lg:px-12 py-8 pt-28 flex flex-col lg:flex-row gap-8">
-<aside class="w-full lg:w-72 lg:flex flex-col gap-6 shrink-0 mb-8 lg:mb-0">
+<main class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-12 py-8 pt-28 flex flex-col lg:flex-row gap-8">
+<aside class="w-full lg:w-72 flex flex-col gap-6 shrink-0 mb-4 lg:mb-0">
+<div class="flex items-center justify-between">
 <div class="flex flex-col gap-1">
 <h2 class="text-lg font-bold text-primary" data-translate="filters">Filters</h2>
-<p class="text-slate-400 text-sm" data-translate="refineCollection">Refine your collection</p>
+<p class="text-slate-400 text-sm hidden lg:block" data-translate="refineCollection">Refine your collection</p>
 </div>
-<div class="flex flex-col gap-4">
+<button id="filter-toggle" class="lg:hidden flex items-center gap-1 text-primary text-sm font-semibold px-3 py-1.5 rounded-lg border border-primary/30 hover:bg-primary/10 transition-colors" onclick="document.getElementById('filter-body').classList.toggle('hidden')">
+<span class="material-symbols-outlined text-base">tune</span> Filters
+</button>
+</div>
+<div id="filter-body" class="hidden lg:flex flex-col gap-4">
 <div class="relative">
 <span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-primary/60">search</span>
 <input class="w-full pl-10 pr-4 py-2.5 bg-white/5 border border-white/10 rounded-lg text-sm focus:ring-1 focus:ring-primary focus:border-primary focus:outline-none placeholder:text-slate-500 transition-all" placeholder="Search games..." data-translate="searchGames"/>
@@ -199,12 +206,22 @@
 </details>
 </div>
 </div>
-<button class="mt-4 w-full py-3 rounded-lg border border-primary/30 text-primary text-sm font-bold hover:bg-primary/10 transition-colors" data-translate="resetFilters">
+<button class="mt-2 w-full py-3 rounded-lg border border-primary/30 text-primary text-sm font-bold hover:bg-primary/10 transition-colors" data-translate="resetFilters">
             Reset All Filters
         </button>
 </aside>
 <section class="flex-1">
-<div class="grid grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+<div class="flex items-center justify-between mb-4 gap-2 flex-wrap">
+<p class="text-slate-400 text-sm" id="game-count"></p>
+<div class="flex items-center gap-1.5 flex-wrap">
+<span class="text-slate-400 text-xs hidden sm:inline">Sort:</span>
+<button id="sort-new" onclick="sortGames('new')" class="px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-400 text-xs font-bold hover:border-primary hover:text-white transition-colors">🆕 New</button>
+<button id="sort-az" onclick="sortGames('az')" class="px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-400 text-xs font-bold hover:border-primary hover:text-white transition-colors">A→Z</button>
+<button id="sort-za" onclick="sortGames('za')" class="px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-400 text-xs font-bold hover:border-primary hover:text-white transition-colors">Z→A</button>
+<button id="sort-default" onclick="sortGames('default')" class="px-2.5 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-400 text-xs font-bold hover:border-primary hover:text-white transition-colors">Default</button>
+</div>
+</div>
+<div id="game-grid" class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
 
 <div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2,3,4,5" data-added-date="2026-05-01">
 <div class="relative overflow-hidden aspect-square">
@@ -221,7 +238,7 @@
 </div>
 </div>
 
-<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="1,2,3,4" data-added-date="2026-05-01">
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="1,2,3,4" data-added-date="2026-05-01" data-youtube="https://www.youtube.com/embed/neoU6hsy2z4?rel=0&modestbranding=1" data-youtube-link="https://www.youtube.com/watch?v=neoU6hsy2z4" data-desc="A delightful family card game featuring Twinkle Twinkle along with the How I Wonder expansion. Perfect for young players and families looking for a fun, easy-to-learn experience.">
 <div class="relative overflow-hidden aspect-square">
 <img loading="lazy" src="https://i.ibb.co/9Hqk37Bc/Twinkle-Twinkle-Twinkle-Twinkle-How-I-Wonder.png" alt="Twinkle Twinkle + How I Wonder Expansion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
 <div class="absolute top-2 right-2 bg-red-600 text-white text-xs font-bold px-2 py-1 rounded new-tag">NEW</div>
@@ -232,6 +249,734 @@
 <div class="flex gap-2 flex-wrap">
 <span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
 <span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="1,2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Speed+Cups" alt="Speed Cups" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Speed Cups</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="1,2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Bandida" alt="Bandida" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Bandida</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="1,2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Bandido" alt="Bandido" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Bandido</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="advanced" data-players="1,2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Heirs+of+the+Wizard+King" alt="Heirs of the Wizard King" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Heirs of the Wizard King</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="1,2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Submachine" alt="Submachine" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Submachine</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="1,2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Aqua+Garden" alt="Aqua Garden + Sea Jewelry, Sea King, Outdoor Expansion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Aqua Garden + Sea Jewelry, Sea King, Outdoor Expansion</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="1,2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=UnLock" alt="UnLock" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">UnLock</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="1,2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Escape+Adventures" alt="Escape Adventures" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Escape Adventures</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">1-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=The+Arctic" alt="The Arctic" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">The Arctic</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Dust+Biters" alt="Dust Biters" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Dust Biters</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Blokus+Duo" alt="Blokus" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Blokus</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Brave+Rats" alt="Brave Rats" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Brave Rats</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=A+Duel+of+Clashing+Vom" alt="A Duel of Clashing Vom" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">A Duel of Clashing Vom</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Sushi+Go+Party" alt="Sushi Go Party! The Deluxe Pick and Play Cardgame" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Sushi Go Party! The Deluxe Pick and Play Cardgame</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Roll+for+It" alt="Roll for It Deluxe Edition" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Roll for It Deluxe Edition</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Geistes+Blitz" alt="Geistes Blitz" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Geistes Blitz</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Kunterbunt+Duo" alt="Kunterbunt Duo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Kunterbunt Duo</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Spot+It" alt="Spot It" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Spot It</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Endangered+Giant+Panda" alt="The Endangered: Giant Panda" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">The Endangered: Giant Panda</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2,3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Visit+from+the+Rhine+Valley" alt="Visit from the Rhine Valley + Expansion" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Visit from the Rhine Valley + Expansion</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Mat+Goceng" alt="Mat Goceng" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Mat Goceng</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=St+Patrick" alt="St Patrick" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">St Patrick</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="3,4,5">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Wanted" alt="Wanted!" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Wanted!</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-5 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="3,4,5">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Goose+Choose" alt="Goose Choose Can You Survive the Chase?" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Goose Choose Can You Survive the Chase?</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-5 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Enjoy+Dur" alt="Enjoy Dur Party Game" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Enjoy Dur Party Game</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Love+Letter+Premium" alt="Love Letter Premium Edition" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Love Letter Premium Edition</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4,5">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Plantopia" alt="Plantopia" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Plantopia</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-5 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Rick+and+Morty" alt="Rick and Morty Total Rickall Cardgame" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Rick and Morty Total Rickall Cardgame</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-5 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Shady+Peks" alt="Shady Peks Card Games" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Shady Peks Card Games</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-5 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Sushi+Go" alt="Sushi Go! and The Pick N Pass Cardgame" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Sushi Go! and The Pick N Pass Cardgame (small)</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-5 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="3,4,5,6,7">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Nasi+Lemak" alt="Nasi Lemak The Game + The Rendang" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Nasi Lemak The Game + The Rendang</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-7 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Exploding+Kittens+GvE" alt="Exploding Kittens Good vs Evil" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Exploding Kittens Good vs Evil</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-5 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5,6,7,8,9,10">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=6+Nimmt" alt="6 Nimmt!" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">6 Nimmt!</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-10 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="3,4,5,6,7,8,9,10">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Gotta+Go" alt="Gotta Go!" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Gotta Go!</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-10 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Ugly+Doll" alt="Ugly Doll Cardgame" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Ugly Doll Cardgame</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Ecosystem" alt="Ecosystem" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Ecosystem</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Mustachio" alt="Mustachio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Mustachio</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=The+Nasty+7" alt="The Nasty 7" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">The Nasty 7</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Lama" alt="Lama Take It Easy Don't Lama Dice" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Lama Take It Easy Don't Lama Dice</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Unreal+Estate" alt="Unreal Estate" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Unreal Estate</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=The+Malaysian+Dream" alt="The Malaysian Dream" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">The Malaysian Dream</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4,5,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Schau+Mall" alt="Schau Mall" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Schau Mall</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-6 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Drecksay" alt="Drecksay" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Drecksay</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Love+Letter+Batman" alt="Love Letter Batman Edition" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Love Letter Batman Edition</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=The+Mind" alt="The Mind" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">The Mind</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Struggle+for+Caton" alt="Struggle for Caton Multiplayer Card Game" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Struggle for Caton Multiplayer Card Game</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="family" data-difficulty="beginner" data-players="2,3,4">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Happy+Little+Dinosaurs" alt="Happy Little Dinosaurs" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Happy Little Dinosaurs</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="family">Family</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">2-4 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="4,5,6,7,8,9,10,11,12">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=We+Will+Rock+You" alt="We Will Rock You" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">We Will Rock You</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">4-12 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="3,4,5,6,7,8">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Tofu+Kingdom" alt="Tofu Kingdom" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Tofu Kingdom</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3-8 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="strategy" data-difficulty="intermediate" data-players="5">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Identity+V" alt="Identity V" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Identity V</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="strategy">Strategy</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">5 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="3,10">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Yogi+Guiu+Yogi" alt="Yogi Guiu Yogi" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Yogi Guiu Yogi</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3 or 10 <span data-translate="players">Players</span></span>
+</div>
+</div>
+</div>
+
+<div class="game-card glass-card rounded-xl overflow-hidden group hover:-translate-y-2 transition-all duration-300" data-category="party" data-difficulty="beginner" data-players="3,6">
+<div class="relative overflow-hidden aspect-square">
+<img loading="lazy" src="https://via.placeholder.com/400x400/1a120b/D4AF37?text=Once+Upon+a+Plunder" alt="Once Upon a Plunder" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity"></div>
+</div>
+<div class="p-4">
+<h3 class="text-sm md:text-lg font-bold text-white mb-2 line-clamp-2 group-hover:line-clamp-none transition-all">Once Upon a Plunder</h3>
+<div class="flex gap-2 flex-wrap">
+<span class="text-xs px-2 py-1 bg-primary/20 text-primary rounded" data-translate="partyGames">Party Games</span>
+<span class="text-xs px-2 py-1 bg-white/10 text-white rounded">3 or 6 <span data-translate="players">Players</span></span>
 </div>
 </div>
 </div>
@@ -3937,6 +4682,36 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initial pagination
     updatePagination();
 });
+</script>
+<script>
+function sortGames(order) {
+  const grid = document.getElementById('game-grid');
+  const cards = Array.from(grid.querySelectorAll('.game-card'));
+  const btnNew = document.getElementById('sort-new');
+  const btnAz = document.getElementById('sort-az');
+  const btnZa = document.getElementById('sort-za');
+  const btnDef = document.getElementById('sort-default');
+  [btnNew, btnAz, btnZa, btnDef].forEach(b => {
+    b.className = 'px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 text-slate-400 text-xs font-bold hover:border-primary hover:text-white transition-colors';
+  });
+  const active = 'px-3 py-1.5 rounded-lg bg-primary/20 border border-primary/40 text-primary text-xs font-bold transition-colors';
+  if (order === 'new') btnNew.className = active;
+  else if (order === 'az') btnAz.className = active;
+  else if (order === 'za') btnZa.className = active;
+  else btnDef.className = active;
+  if (order === 'default') { location.reload(); return; }
+  cards.sort((a, b) => {
+    if (order === 'new') {
+      const aNew = a.querySelector('.new-tag') ? 1 : 0;
+      const bNew = b.querySelector('.new-tag') ? 1 : 0;
+      return bNew - aNew;
+    }
+    const nameA = a.querySelector('h3').textContent.trim().toLowerCase();
+    const nameB = b.querySelector('h3').textContent.trim().toLowerCase();
+    return order === 'az' ? nameA.localeCompare(nameB) : nameB.localeCompare(nameA);
+  });
+  cards.forEach(c => grid.appendChild(c));
+}
 </script>
 
 </body></html>

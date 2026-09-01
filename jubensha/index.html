@@ -8,7 +8,7 @@
 <meta property="og:image" content="../assets/logos/jubensha-logo.jpg">
 <meta property="og:url" content="https://antzboardgame.com/jubensha">
 <meta property="og:type" content="website">
-<meta property="og:site_name" content="AntzJubensha">
+<meta property="og:site_name" content="Antzboardgame & AntzJubensha">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="AntzJubensha - Where Secrets Die and Mysteries Come Alive">
 <meta name="twitter:description" content="Enter the shadows of Jubensha mystery games in Miri. Immersive roleplay experiences where every whisper carries weight and every shadow hides a suspect.">
@@ -274,10 +274,10 @@
 <h2 class="font-serif-noir text-tarnished-gold text-5xl font-bold mb-8 tracking-widest uppercase" data-translate="jubenshaFacilities">Our Facilities</h2>
 <p class="text-gray-400 text-xl md:text-2xl font-serif-noir italic max-w-3xl mx-auto" data-translate="facilitiesDesc">Immerse yourself in our specially designed Jubensha rooms</p>
 </div>
-<div class="grid md:grid-cols-2 gap-12">
+<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
 <div class="glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-all duration-500">
 <div class="relative overflow-hidden rounded-xl mb-6">
-<img alt="Jubensha Room 1" class="w-full h-64 object-cover low-key-image group-hover:scale-105 transition-transform duration-700" src="../assets/images/Rooms/Jubensha_Room1.jpg"/>
+<img alt="Jubensha Room 1" class="w-full h-64 object-cover low-key-image group-hover:scale-105 transition-transform duration-700" src="https://i.ibb.co/4nQKzLqL/Jubensha-Room1.jpg"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
 </div>
 <h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4" data-translate="mysteryChamber">Mystery Chamber</h3>
@@ -288,9 +288,12 @@
 <p class="text-gray-400 font-serif-noir italic text-lg" data-translate="mysteryChamberDesc">An intimate setting perfect for classic detective mysteries and psychological thrillers. Dark wood furnishings and vintage decor create the perfect atmosphere for unraveling secrets.</p>
 </div>
 <div class="glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-all duration-500">
-<div class="relative overflow-hidden rounded-xl mb-6">
-<img alt="Jubensha Room 2" class="w-full h-64 object-cover low-key-image group-hover:scale-105 transition-transform duration-700" src="../assets/images/Rooms/Jubensha_Room2.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<div class="relative overflow-hidden rounded-xl mb-6 h-64">
+<div class="room-slideshow relative w-full h-full">
+<img alt="Grand Investigation Hall" class="slide-room active absolute inset-0 w-full h-full object-cover low-key-image transition-opacity duration-1000 ease-in-out opacity-100 group-hover:scale-105" src="https://i.ibb.co/84LBbHq9/Jubensha-Room2.jpg"/>
+<img alt="Grand Investigation Hall" class="slide-room absolute inset-0 w-full h-full object-cover low-key-image transition-opacity duration-1000 ease-in-out opacity-0 group-hover:scale-105" src="https://i.ibb.co/chq2N6YY/Jubensha-Room2-1.jpg"/>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
 </div>
 <h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4" data-translate="grandHall">Grand Investigation Hall</h3>
 <div class="flex items-center gap-4 mb-4">
@@ -298,6 +301,18 @@
 <span class="text-gray-400" data-translate="grandCapacity">Capacity: 6-8 Players</span>
 </div>
 <p class="text-gray-400 font-serif-noir italic text-lg" data-translate="grandHallDesc">A spacious room designed for larger groups and complex storylines. Features multiple seating areas and atmospheric lighting perfect for epic historical dramas and supernatural mysteries where shadows whisper secrets and every corner holds dread.</p>
+</div>
+<div class="glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-all duration-500">
+<div class="relative overflow-hidden rounded-xl mb-6">
+<img alt="Jubensha Room 3" class="w-full h-64 object-cover low-key-image group-hover:scale-105 transition-transform duration-700" src="https://i.ibb.co/Fk2DDfpf/Jubensha-Room3.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+</div>
+<h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4" data-translate="shadowLounge">The Tatami Room</h3>
+<div class="flex items-center gap-4 mb-4">
+<span class="material-symbols-outlined text-blood-crimson">group</span>
+<span class="text-gray-400" data-translate="shadowCapacity">Capacity: 4-6 Players</span>
+</div>
+<p class="text-gray-400 font-serif-noir italic text-lg" data-translate="shadowLoungeDesc">A serene Japanese-inspired space with low tatami seating and a traditional table. Warm lantern light and minimalist decor create an intimate, contemplative atmosphere perfect for tales of honor, secrets, and quiet suspense.</p>
 </div>
 </div>
 </div>
@@ -419,6 +434,23 @@ function nextJubenshaSlide() {
 
 // Auto-advance slideshow every 4 seconds
 setInterval(nextJubenshaSlide, 4000);
+
+// Grand Investigation Hall room slideshow
+let currentRoomSlide = 0;
+const roomSlides = document.querySelectorAll('.slide-room');
+const totalRoomSlides = roomSlides.length;
+
+function nextRoomSlide() {
+    if (totalRoomSlides === 0) return;
+    roomSlides[currentRoomSlide].classList.remove('opacity-100');
+    roomSlides[currentRoomSlide].classList.add('opacity-0');
+    currentRoomSlide = (currentRoomSlide + 1) % totalRoomSlides;
+    roomSlides[currentRoomSlide].classList.remove('opacity-0');
+    roomSlides[currentRoomSlide].classList.add('opacity-100');
+}
+
+// Auto-advance room slideshow every 4 seconds
+setInterval(nextRoomSlide, 4000);
 
 // Mobile menu functionality
 const mobileMenuButton = document.getElementById('mobile-menu-button');
