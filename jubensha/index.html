@@ -107,6 +107,12 @@
             .low-key-image:hover {
                 filter: brightness(0.8) contrast(1.1) sepia(0.1);
             }
+            .room-img {
+                filter: brightness(1) contrast(1.05);
+            }
+            .room-img:hover {
+                filter: brightness(1.1) contrast(1.05);
+            }
             .animate-horror-pulse {
                 animation: horror-pulse 8s ease-in-out infinite;
             }
@@ -318,10 +324,10 @@
 <div class="grid lg:grid-cols-2 gap-8 lg:gap-10 items-center">
 <div class="relative overflow-hidden rounded-xl h-72 md:h-96">
 <div class="room-slideshow relative w-full h-full">
-<img alt="Grand Investigation Hall" class="slide-room active absolute inset-0 w-full h-full object-cover low-key-image transition-opacity duration-1000 ease-in-out opacity-100 group-hover:scale-105" src="https://i.ibb.co/84LBbHq9/Jubensha-Room2.jpg"/>
-<img alt="Grand Investigation Hall" class="slide-room absolute inset-0 w-full h-full object-cover low-key-image transition-opacity duration-1000 ease-in-out opacity-0 group-hover:scale-105" src="https://i.ibb.co/chq2N6YY/Jubensha-Room2-1.jpg"/>
+<img alt="Grand Investigation Hall" class="slide-room active absolute inset-0 w-full h-full object-cover room-img transition-opacity duration-1000 ease-in-out opacity-100 group-hover:scale-105" src="https://i.ibb.co/84LBbHq9/Jubensha-Room2.jpg"/>
+<img alt="Grand Investigation Hall" class="slide-room absolute inset-0 w-full h-full object-cover room-img transition-opacity duration-1000 ease-in-out opacity-0 group-hover:scale-105" src="https://i.ibb.co/chq2N6YY/Jubensha-Room2-1.jpg"/>
 </div>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent pointer-events-none"></div>
 </div>
 <div>
 <h3 class="font-serif-noir text-3xl md:text-4xl font-bold text-tarnished-gold mb-4" data-translate="grandHall">Grand Investigation Hall</h3>
@@ -337,8 +343,8 @@
 <div class="grid md:grid-cols-2 gap-12">
 <div class="glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-all duration-500">
 <div class="relative overflow-hidden rounded-xl mb-6">
-<img alt="Jubensha Room 1" class="w-full h-64 object-cover low-key-image group-hover:scale-105 transition-transform duration-700" src="https://i.ibb.co/4nQKzLqL/Jubensha-Room1.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<img alt="Jubensha Room 1" class="w-full h-64 object-cover room-img group-hover:scale-105 transition-transform duration-700" src="https://i.ibb.co/4nQKzLqL/Jubensha-Room1.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
 </div>
 <h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4" data-translate="mysteryChamber">Mystery Chamber</h3>
 <div class="flex items-center gap-4 mb-4">
@@ -349,8 +355,8 @@
 </div>
 <div class="glass-card p-8 rounded-2xl group hover:-translate-y-2 transition-all duration-500">
 <div class="relative overflow-hidden rounded-xl mb-6">
-<img alt="Jubensha Room 3" class="w-full h-64 object-cover low-key-image group-hover:scale-105 transition-transform duration-700" src="https://i.ibb.co/Fk2DDfpf/Jubensha-Room3.jpg"/>
-<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+<img alt="Jubensha Room 3" class="w-full h-64 object-cover room-img group-hover:scale-105 transition-transform duration-700" src="https://i.ibb.co/Fk2DDfpf/Jubensha-Room3.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent"></div>
 </div>
 <h3 class="font-serif-noir text-2xl font-bold text-tarnished-gold mb-4" data-translate="shadowLounge">The Tatami Room</h3>
 <div class="flex items-center gap-4 mb-4">
